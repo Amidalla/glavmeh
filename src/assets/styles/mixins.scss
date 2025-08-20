@@ -1,0 +1,134 @@
+@use "../styles/colors.scss" as c;
+
+@mixin button-styles1 ($color: c.$orange, $hover-color: c.$red, $disabled-color: c.$grey) {
+  padding: 11px 23.5px;
+  width: 180px;
+  height: 40px;
+  border-radius: 8px;
+  color: c.$white;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  background-color: $color;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: $disabled-color;
+    color: c.$text-grey;
+  }
+}
+
+@mixin button-styles2 ($color: c.$blue, $hover-color: c.$dark, $disabled-color: c.$text-grey) {
+  width: 152px;
+  height: 40px;
+  background: c.$blue;
+  color: c.$white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 11px 14.5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: c.$white;
+    color: c.$dark;
+    border: 1px solid c.$blue;
+    width: 154px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: c.$grey;
+    color: c.$text-grey;
+    width: 152px;
+  }
+}
+
+
+@mixin button-link($top: 18px, $right: 12.5px) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  background-color: c.$white;
+  width: 35.5px;
+  height: 21px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-image: url("../images/arrow2.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0 4px 8.7px 0 #00000026;
+  z-index: 1000;
+
+
+  &:hover {
+    background-image: url("../images/arrow3.svg");
+    box-shadow: 0 4px 8.7px 0 #FF880026;
+  }
+
+  &:disabled {
+    background-image: url("../images/arrow4.svg");
+    box-shadow: 0 4px 8.7px 0 #00000026;
+  }
+}
+
+@mixin h2-styles($size: 37px, $weight: 700, $color: c.$dark) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  margin-bottom: 32px;
+}
+
+@mixin button-arrow($image-path: "../images/arrow2.svg",
+                   $bg-color: c.$white,
+                   $width: 47.5px,
+                   $height: 27px,
+                   $border-radius: 8px,
+                   $padding: 4px 8px,
+                   $shadow-color: #00000026) {
+
+  background-image: url($image-path);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $bg-color;
+
+  width:  $width;
+  height: $height;
+
+  border-radius: $border-radius;
+  padding: $padding;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 8.7px 0 $shadow-color;
+
+  position: absolute;
+  top: 90%;
+
+  &:hover {
+    background-image: url("../images/arrow3.svg");
+    box-shadow: 0 4px 8.7px 0 #FF880026;
+  }
+
+  &:disabled {
+    background-image: url("../images/arrow4.svg");
+    box-shadow: 0 4px 8.7px 0 #00000026;
+  }
+}
