@@ -1539,6 +1539,7 @@
 
         padding-left: 36px;
         position: relative;
+        display: inline-block;
 
         &:first-child {
             margin-bottom: 28px;
@@ -1663,6 +1664,7 @@
         font-size: 16px;
         font-weight: 500;
         color: c.$white;
+        display: inline-block;
 
         &::after {
             content: "";
