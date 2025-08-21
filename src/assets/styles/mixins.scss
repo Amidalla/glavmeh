@@ -11,7 +11,7 @@
   text-align: center;
   background-color: $color;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
     background-color: $hover-color;
@@ -37,9 +37,10 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
+    width: 154px;
     background: c.$white;
     color: c.$dark;
     border: 1px solid c.$blue;
@@ -63,7 +64,7 @@
   background-color: c.$white;
   width: 35.5px;
   height: 21px;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 4px 8px;
   display: flex;
   align-items: center;
@@ -72,6 +73,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   box-shadow: 0 4px 8.7px 0 #00000026;
+  transition: transform 0.3s ease;
   z-index: 1000;
 
 
@@ -97,7 +99,7 @@
                    $bg-color: c.$white,
                    $width: 47.5px,
                    $height: 27px,
-                   $border-radius: 8px,
+                   $border-radius: 20px,
                    $padding: 4px 8px,
                    $shadow-color: #00000026) {
 
@@ -118,7 +120,7 @@
   cursor: pointer;
 
   box-shadow: 0 4px 8.7px 0 $shadow-color;
-
+  transition: transform 0.3s ease;
   position: absolute;
   top: 90%;
 
@@ -130,5 +132,96 @@
   &:disabled {
     background-image: url("../images/arrow4.svg");
     box-shadow: 0 4px 8.7px 0 #00000026;
+  }
+}
+
+@mixin items-slider($padding-top: 60px,
+              $padding-bottom: 50px,
+              $slide-height: 333px,
+              $slide-max-width: 315px,
+              $border-color: #D8DADF,
+              $arrow-top: 38px) {
+
+  .slider-popular {
+    padding-bottom: $padding-bottom;
+    padding-top: $padding-top;
+
+    .swiper-button-next {
+      @include button-arrow();
+      top: $arrow-top;
+      right: 5px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev {
+      @include button-arrow();
+      top: $arrow-top;
+      transform: rotate(180deg);
+      right: 78px;
+      left: calc(100% - 120px);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  h2 {
+    @include h2-styles();
+    margin-top: 60px;
+    margin-bottom: 9px;
+  }
+
+  .swiper-slide {
+    height: $slide-height;
+    max-width: $slide-max-width;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 25px;
+    padding-top: 0;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: c.$black;
+    }
+  }
+
+  &__description-bottom {
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+
+    .price {
+      font-size: 16px;
+      font-weight: 400;
+      color: c.$black;
+      display: flex;
+      min-width: 80px;
+      justify-content: space-between;
+      align-items: end;
+
+      span {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 100%;
+      }
+    }
+
+    button {
+      @include button-styles2();
+    }
   }
 }
