@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchSubmit = document.querySelector('.form_search__btn');
     const searchClose = document.querySelector('.search__close');
 
-    // Открытие поиска
+
     searchBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (!searchForm.classList.contains('active')) {
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Отправка формы
+
     searchSubmit.addEventListener('click', function(e) {
         e.preventDefault();
         if (searchInput.value.trim() !== '') {
@@ -228,33 +228,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Закрытие поиска по крестику
+
     searchClose.addEventListener('click', function(e) {
         e.stopPropagation();
         closeSearch();
     });
 
-    // Функция закрытия поиска
+
     function closeSearch() {
         searchForm.classList.remove('active');
         searchInput.value = '';
     }
 
-    // Закрытие при клике вне области поиска
+
     document.addEventListener('click', function(e) {
         if (!searchForm.contains(e.target) && !searchBtn.contains(e.target) && searchForm.classList.contains('active')) {
             closeSearch();
         }
     });
 
-    // Закрытие по Escape
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && searchForm.classList.contains('active')) {
             closeSearch();
         }
     });
 
-    // Предотвращаем закрытие при клике внутрь формы
+  
     searchForm.addEventListener('click', function(e) {
         e.stopPropagation();
     });
