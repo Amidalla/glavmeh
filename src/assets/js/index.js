@@ -8,12 +8,16 @@ Swiper.use([Pagination, Navigation, Autoplay]);
 const modal = document.querySelector(".modal-catalog");
 const modal2 = document.querySelector(".modal-order-call");
 const modal3 = document.querySelector(".modal-one-click");
+const modal4 = document.querySelector(".product-added-modal");
 const overlay = document.querySelector(".overlay");
 const openButton = document.querySelector(".header__button_catalog");
 const openButton2 = document.querySelector(".header__button_order-call");
 const openButton3 = document.querySelectorAll(".popular__one-click-btn");
+const openButton4 = document.querySelectorAll(".new-items__btn");
 const closeButton = document.querySelector(".modal-order-call__close");
 const closeButton2 = document.querySelector(".modal-one-click__close");
+
+
 
 
 // Инициализация
@@ -70,7 +74,6 @@ const swiper6 = new Swiper(".slider-main-reviews", {
     },
 });
 
-
 function openModal(modalElement, buttonElement = null, useOverlay = true) {
     modalElement.classList.add('opened');
     if (buttonElement) {
@@ -118,6 +121,13 @@ openButton3.forEach(button => {
 });
 closeButton2.addEventListener('click', () => closeModal(modal3, null, true));
 
+openButton4.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleModal(modal4, null, true);
+    });
+});
+
 document.addEventListener('click', (event) => {
     if (modal.classList.contains('opened') &&
         !modal.contains(event.target) &&
@@ -136,6 +146,12 @@ document.addEventListener('click', (event) => {
         !Array.from(openButton3).some(btn => btn.contains(event.target))) {
         closeModal(modal3, null, true);
     }
+
+    if (modal4.classList.contains('opened') &&
+        !modal4.contains(event.target) &&
+        !Array.from(openButton4).some(btn => btn.contains(event.target))) {
+        closeModal(modal4, null, true);
+    }
 });
 
 document.addEventListener('keydown', (event) => {
@@ -146,6 +162,8 @@ document.addEventListener('keydown', (event) => {
             closeModal(modal2, openButton2, true);
         } else if (modal3.classList.contains('opened')) {
             closeModal(modal3, null, true);
+        } else if (modal4.classList.contains('opened')) {
+            closeModal(modal4, null, true);
         }
     }
 });
@@ -156,6 +174,8 @@ overlay.addEventListener('click', (event) => {
             closeModal(modal2, openButton2, true);
         } else if (modal3.classList.contains('opened')) {
             closeModal(modal3, null, true);
+        } else if (modal4.classList.contains('opened')) {
+            closeModal(modal4, null, true);
         }
     }
 });
@@ -259,3 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     });
 });
+
+
+

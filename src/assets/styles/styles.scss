@@ -2269,3 +2269,34 @@ form {
         transition: opacity 0.3s ease;
     }
 }
+
+.product-added-modal {
+    width: 380px;
+    padding: 20px 60px 18px 20px;
+    background: c.$white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 17px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+
+
+    &.opened {
+        transition: all 0.25s;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 500;
+        color: c.$dark;
+    }
+}
