@@ -14,10 +14,9 @@ const openButton = document.querySelector(".header__button_catalog");
 const openButton2 = document.querySelector(".header__button_order-call");
 const openButton3 = document.querySelectorAll(".popular__one-click-btn");
 const openButton4 = document.querySelectorAll(".new-items__btn");
+const openButton5 = document.querySelector(".contacts__button");
 const closeButton = document.querySelector(".modal-order-call__close");
 const closeButton2 = document.querySelector(".modal-one-click__close");
-
-
 
 
 // Инициализация
@@ -74,6 +73,7 @@ const swiper6 = new Swiper(".slider-main-reviews", {
     },
 });
 
+
 function openModal(modalElement, buttonElement = null, useOverlay = true) {
     modalElement.classList.add('opened');
     if (buttonElement) {
@@ -111,6 +111,12 @@ openButton2.addEventListener('click', (e) => {
     e.preventDefault();
     toggleModal(modal2, openButton2, true);
 });
+
+openButton5.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleModal(modal2, openButton2, true);
+});
+
 closeButton.addEventListener('click', () => closeModal(modal2, openButton2, true));
 
 openButton3.forEach(button => {
@@ -137,7 +143,8 @@ document.addEventListener('click', (event) => {
 
     if (modal2.classList.contains('opened') &&
         !modal2.contains(event.target) &&
-        !openButton2.contains(event.target)) {
+        !openButton2.contains(event.target) &&
+        !openButton5.contains(event.target)) {
         closeModal(modal2, openButton2, true);
     }
 
@@ -179,7 +186,6 @@ overlay.addEventListener('click', (event) => {
         }
     }
 });
-
 
 window.addEventListener('DOMContentLoaded', () => {
     const minusButton = document.querySelector('.minus');
