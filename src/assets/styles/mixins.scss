@@ -74,7 +74,7 @@
   background-position: center center;
   box-shadow: 0 4px 8.7px 0 #00000026;
   transition: transform 0.3s ease;
-  z-index: 1000;
+  z-index: 900;
 
 
   &:hover {
@@ -223,5 +223,49 @@
     button {
       @include button-styles2();
     }
+  }
+}
+
+@mixin input-styles {
+  width: 545px;
+  height: 44px;
+  background: c.$white;
+  display: inline-block;
+  margin-bottom: 17px;
+  padding-left: 14px;
+  font: {
+    size: 16px;
+    weight: 500;
+  }
+  color: #888888;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+@mixin checkbox-styles {
+  width: 24px;
+  height: 24px;
+  background: c.$white;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    left: 6px;
+    top: 10px;
+  }
+
+  &:checked::before {
+    border-right: 2px solid #888888;
+    border-bottom: 2px solid #888888;
+    height: 14px;
+    width: 8px;
+    transform: rotate(50deg) translateY(-20%) translateX(-10%);
   }
 }

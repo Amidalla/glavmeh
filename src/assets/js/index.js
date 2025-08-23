@@ -5,6 +5,17 @@ import 'swiper/swiper-bundle.css';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 Swiper.use([Pagination, Navigation, Autoplay]);
 
+const modal = document.querySelector(".modal-catalog");
+const modal2 = document.querySelector(".modal-order-call");
+const modal3 = document.querySelector(".modal-one-click");
+const overlay = document.querySelector(".overlay");
+const openButton = document.querySelector(".header__button_catalog");
+const openButton2 = document.querySelector(".header__button_order-call");
+const openButton3 = document.querySelectorAll(".popular__one-click-btn");
+const closeButton = document.querySelector(".modal-order-call__close");
+const closeButton2 = document.querySelector(".modal-one-click__close");
+
+
 // Инициализация
 const swiper = new Swiper(".slider-main", {
     autoplay: true,
@@ -57,4 +68,194 @@ const swiper6 = new Swiper(".slider-main-reviews", {
         nextEl: '.main-reviews__item .swiper-button-next',
         prevEl: '.main-reviews__item .swiper-button-prev'
     },
+});
+
+
+function openModal(modalElement, buttonElement = null, useOverlay = true) {
+    modalElement.classList.add('opened');
+    if (buttonElement) {
+        buttonElement.classList.add('opened');
+    }
+    if (useOverlay) {
+        overlay.classList.add('opened');
+    }
+}
+
+function closeModal(modalElement, buttonElement = null, useOverlay = true) {
+    modalElement.classList.remove('opened');
+    if (buttonElement) {
+        buttonElement.classList.remove('opened');
+    }
+    if (useOverlay) {
+        overlay.classList.remove('opened');
+    }
+}
+
+function toggleModal(modalElement, buttonElement = null, useOverlay = true) {
+    if (modalElement.classList.contains('opened')) {
+        closeModal(modalElement, buttonElement, useOverlay);
+    } else {
+        openModal(modalElement, buttonElement, useOverlay);
+    }
+}
+
+openButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleModal(modal, openButton, false);
+});
+
+openButton2.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleModal(modal2, openButton2, true);
+});
+closeButton.addEventListener('click', () => closeModal(modal2, openButton2, true));
+
+openButton3.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleModal(modal3, null, true);
+    });
+});
+closeButton2.addEventListener('click', () => closeModal(modal3, null, true));
+
+document.addEventListener('click', (event) => {
+    if (modal.classList.contains('opened') &&
+        !modal.contains(event.target) &&
+        !openButton.contains(event.target)) {
+        closeModal(modal, openButton, false);
+    }
+
+    if (modal2.classList.contains('opened') &&
+        !modal2.contains(event.target) &&
+        !openButton2.contains(event.target)) {
+        closeModal(modal2, openButton2, true);
+    }
+
+    if (modal3.classList.contains('opened') &&
+        !modal3.contains(event.target) &&
+        !Array.from(openButton3).some(btn => btn.contains(event.target))) {
+        closeModal(modal3, null, true);
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        if (modal.classList.contains('opened')) {
+            closeModal(modal, openButton, false);
+        } else if (modal2.classList.contains('opened')) {
+            closeModal(modal2, openButton2, true);
+        } else if (modal3.classList.contains('opened')) {
+            closeModal(modal3, null, true);
+        }
+    }
+});
+
+overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+        if (modal2.classList.contains('opened')) {
+            closeModal(modal2, openButton2, true);
+        } else if (modal3.classList.contains('opened')) {
+            closeModal(modal3, null, true);
+        }
+    }
+});
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const minusButton = document.querySelector('.minus');
+    const plusButton = document.querySelector('.plus');
+    const input = document.querySelector('.quantity-items input');
+
+    minusButton.addEventListener('click', function(e) {
+        e.preventDefault(); // Блокируем отправку формы
+        let count = parseInt(input.value) - 1;
+        count = Math.max(count, 1);
+        input.value = count;
+    });
+
+    plusButton.addEventListener('click', function(e) {
+        e.preventDefault(); // Блокируем отправку формы
+        let count = parseInt(input.value) + 1;
+        const maxValue = 100;
+        count = Math.min(count, maxValue);
+        input.value = count;
+    });
+});
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '#!') return;
+
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBtn = document.querySelector('.header__button_search');
+    const searchForm = document.querySelector('.search__form');
+    const searchInput = document.querySelector('.form_search input[type="search"]');
+    const searchSubmit = document.querySelector('.form_search__btn');
+    const searchClose = document.querySelector('.search__close');
+
+    // Открытие поиска
+    searchBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (!searchForm.classList.contains('active')) {
+            searchForm.classList.add('active');
+            setTimeout(() => {
+                searchInput.focus();
+            }, 300);
+        }
+    });
+
+    // Отправка формы
+    searchSubmit.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (searchInput.value.trim() !== '') {
+            searchInput.closest('form').submit();
+        }
+    });
+
+    // Закрытие поиска по крестику
+    searchClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeSearch();
+    });
+
+    // Функция закрытия поиска
+    function closeSearch() {
+        searchForm.classList.remove('active');
+        searchInput.value = '';
+    }
+
+    // Закрытие при клике вне области поиска
+    document.addEventListener('click', function(e) {
+        if (!searchForm.contains(e.target) && !searchBtn.contains(e.target) && searchForm.classList.contains('active')) {
+            closeSearch();
+        }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchForm.classList.contains('active')) {
+            closeSearch();
+        }
+    });
+
+    // Предотвращаем закрытие при клике внутрь формы
+    searchForm.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
 });

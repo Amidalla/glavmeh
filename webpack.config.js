@@ -1,9 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const path = require('path');
+const fs = require('fs');
+const pages = fs.readdirSync(path.resolve(__dirname, 'src')).filter(fileName => fileName.endsWith('.html'));
 
 module.exports = {
     entry: {
-        app: "./src/assets/js/index.js",
+        app: "./src/assets/js/index.js"
     },
     output: {
         clean: true,
@@ -30,9 +32,11 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: "Glavmeh",
-            template: "src/index.html",
-        }),
+        ...pages.map(page => new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', page),
+            filename: page,
+            inject: 'body',
+            minify: false,
+        })),
     ],
 };

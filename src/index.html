@@ -100,13 +100,25 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="header__item header__item_search">
-                    <button class="header__button header__button_search">
+                <div class="header__item header__item_search search">
+                    <button class="header__button header__button_search search__btn">
                         <img src="assets/images/search.svg" alt="">
                     </button>
+                    <div class="search__form">
+                        <div class="search__inner">
+                            <img class="search__btn-open" src="assets/images/search.svg" alt="">
+                            <form class="form_search">
+                                <input type="search" placeholder="Введите товар или артикул" name="q">
+                                <input type="submit" class="form_search__btn" value="">
+                            </form>
+                            <div class="search__close">
+                                <img src="assets/images/cross.svg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="header__item header__item_callback">
-                    <button class="header__button header__button_callback">Оставить заявку</button>
+                    <a href="#form" class="header__button header__button_callback">Оставить заявку</a>
                 </div>
             </div>
         </div>
@@ -164,6 +176,7 @@
             </div>
         </div>
         </div>
+        <a href="#"  target="_blank" class="fixed-link"></a>
     </section>
     <section class="accessories">
         <div class="container">
@@ -241,7 +254,7 @@
                                 <h4>6x7 MM (Тип А) - Антивибрационная опора</h4>
                                 <div class="popular__description-bottom">
                                     <div class="price">от <span>66 ₽</span></div>
-                                    <button>Купить в 1 клик</button>
+                                    <button type="button" class="popular__one-click-btn">Купить в 1 клик</button>
                                 </div>
                             </div>
                         </a>
@@ -253,7 +266,7 @@
                                     <h4>6x7 MM (Тип А) - Антивибрационная опора</h4>
                                     <div class="popular__description-bottom">
                                         <div class="price">от <span>66 ₽</span></div>
-                                        <button>Купить в 1 клик</button>
+                                        <button type="button" class="popular__one-click-btn">Купить в 1 клик</button>
                                     </div>
                                 </div>
                             </a>
@@ -265,7 +278,7 @@
                                 <h4>6x7 MM (Тип А) - Антивибрационная опора</h4>
                                 <div class="popular__description-bottom">
                                     <div class="price">от <span>66 ₽</span></div>
-                                    <button>Купить в 1 клик</button>
+                                    <button type="button" class="popular__one-click-btn">Купить в 1 клик</button>
                                 </div>
                             </div>
                         </a>
@@ -277,7 +290,7 @@
                                 <h4>6x7 MM (Тип А) - Антивибрационная опора</h4>
                                 <div class="popular__description-bottom">
                                     <div class="price">от <span>66 ₽</span></div>
-                                    <button>Купить в 1 клик</button>
+                                    <button type="button" class="popular__one-click-btn">Купить в 1 клик</button>
                                 </div>
                             </div>
                         </a>
@@ -289,7 +302,7 @@
                                 <h4>6x7 MM (Тип А) - Антивибрационная опора</h4>
                                 <div class="popular__description-bottom">
                                     <div class="price">от <span>66 ₽</span></div>
-                                    <button>Купить в 1 клик</button>
+                                    <button type="button" class="popular__one-click-btn">Купить в 1 клик</button>
                                 </div>
                             </div>
                         </a>
@@ -388,7 +401,7 @@
             </div>
         </div>
     </section>
-    <section class="main-form">
+    <section class="main-form" id="form">
         <div class="main-form__inner">
             <div class="container">
                  <p class="main-form__title">
@@ -413,7 +426,7 @@
                     </label>
                     <label>
                     <input type="checkbox" name="checkbox" required>
-                        <span>Я принимаю условия использования Персональных данных и даю согласие на Обработку персональных данных</span>
+                        <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
                     </label>
                     <button type="submit">Получить консультацию</button>
                 </form>
@@ -774,5 +787,140 @@
             </div>
         </div>
 </footer>
+        <div class="modal-catalog">
+            <ul class="modal-catalog__list">
+                <li class="modal-catalog__item">
+                    <a class="modal-catalog__link">Защита от вибрации</a>
+                    <ul class="modal-catalog__list-dropdown">
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Цилиндрические опоры <span class="quantity">(304)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Резино-металлические антивибрационные опоры <span class="quantity">(357)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Гидравлические опоры <span class="quantity">(21)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Антивибрационные регулируемые опоры <span class="quantity">(30)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                        <a href="#" class="modal-catalog__link-dropdown">Эластомерные пружины <span class="quantity">(20)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Пружинные опоры <span class="quantity">(102)</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="modal-catalog__item">
+                    <a class="modal-catalog__link">Комплектующие</a>
+                    <ul class="modal-catalog__list-dropdown">
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Регулируемые опоры <span class="quantity">(304)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Ручки <span class="quantity">(357)</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="modal-catalog__item">
+                    <a class="modal-catalog__link">Защитные колпачки</a>
+                    <ul class="modal-catalog__list-dropdown">
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">РПластиковые защитные колпачки <span class="quantity">(304)</span></a>
+                        </li>
+                        <li class="modal-catalog__item-dropdown">
+                            <a href="#" class="modal-catalog__link-dropdown">Виниловые защитные колпачки <span class="quantity">(304)</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-order-call">
+            <div class="modal-order-call__title">Заказать звонок</div>
+            <form class="modal-order-call__form" action="#" method="POST">
+                <label>
+                    <input type="text" name="name" placeholder="Ваше имя"  required>
+                </label>
+                <label>
+                    <input type="tel" name="tel" placeholder="Контактный телефон" required>
+                </label>
+                <label>
+                    <input type="checkbox" name="checkbox" required>
+                    <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
+                </label>
+                <button class="modal-order-call__button" type="submit">Купить</button>
+            </form>
+            <div class="modal-order-call__close">
+                <img src="assets/images/cross.svg" alt="">
+            </div>
+        </div>
+        <div class="modal-one-click">
+            <div class="modal-one-click__title">Купить в 1 клик</div>
+            <p class="modal-one-click__description">6x7 MM (Тип А) - Антивибрационная опора</p>
+            <form class="modal-one-click__form" action="#" method="POST">
+                <label>
+                    <input type="text" name="name" placeholder="Ваше имя"  required>
+                </label>
+                <label>
+                    <input type="tel" name="tel" placeholder="Контактный телефон" required>
+                </label>
+                <label>
+                    <input type="email" name="email" placeholder="Адрес электронной почты" required>
+                </label>
+                <label>
+                    <select name="hardness">
+                        <option value="">Твердость</option>
+                        <option value="10">10</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                    </select>
+                </label>
+                <label class="quantity-items">
+                    <button class="minus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <g clip-path="url(#clip0_60_7561)">
+                                <rect width="27" height="27" fill="white"/>
+                                <rect y="12" width="37" height="2" fill="#D9D9D9"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_60_7561">
+                                    <rect width="27" height="27" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <input type="number" min="1" value="1">
+                    <span class="unit">шт</span>
+                    <button class="plus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <g clip-path="url(#clip0_60_7558)">
+                                <rect width="27" height="27" fill="white"/>
+                                <rect y="12" width="37" height="2" fill="#D9D9D9"/>
+                                <rect x="14" y="-5.5" width="37" height="2" transform="rotate(90 14 -5.5)" fill="#D9D9D9"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_60_7558">
+                                    <rect width="27" height="27" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </label>
+                <label>
+                    <textarea name="textarea" placeholder="Комментарий" required></textarea>
+                </label>
+                <label class="inline-flex">
+                    <input type="checkbox" name="checkbox" required>
+                    <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
+                </label>
+                <button class="modal-one-click__button" type="submit">Купить</button>
+            </form>
+            <div class="modal-one-click__close">
+                <img src="assets/images/cross.svg" alt="">
+            </div>
+        </div>
+    <div class="overlay"></div>
 </body>
 </html>
