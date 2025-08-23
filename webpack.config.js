@@ -35,7 +35,6 @@ module.exports = {
         ...pages.map(page => new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', page),
             filename: page,
-            inject: 'body',
             minify: false,
         })),
     ],
