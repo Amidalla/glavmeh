@@ -2160,13 +2160,12 @@ form {
         &_search {
             position: relative;
             transition: all 0.3s ease;
-            z-index: 1000;
+            z-index: 999;
         }
     }
 }
 
 .search {
-    &__btn {}
 
     &__form {
         position: absolute;

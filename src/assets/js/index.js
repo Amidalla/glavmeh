@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-  
+
     searchForm.addEventListener('click', function(e) {
         e.stopPropagation();
     });
