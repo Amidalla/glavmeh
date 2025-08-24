@@ -488,8 +488,6 @@
         }
 }
 
-.main {}
-
 .main-slider {
 
     padding-top: 34px;
@@ -612,7 +610,6 @@
 
     }
 
-    &__banner-link {}
 }
 
 .swiper {
@@ -1436,8 +1433,6 @@
     }
 }
 
-.container {}
-
 .main-bout {
     &__item {}
 
@@ -1695,7 +1690,7 @@
             }
         }
 
-        a{
+        a {
             font-size: 23px;
             font-weight: 500;
             color: c.$white
@@ -1720,7 +1715,7 @@
         }
     }
 
-    &__submenu {}
+
 
     &__item-sub {
 
