@@ -2349,8 +2349,9 @@ form {
 
         div {
             position: relative;
+            transition: all 0.3s ease;
 
-          a:hover h3 {
+          &:hover {
               transform: scale(1.1);
           }
 
@@ -2361,7 +2362,7 @@ form {
                 font-size: 16px;
                 font-weight: 600;
                 color: c.$white;
-                transition: all 0.3s ease;
+
             }
         }
     }
