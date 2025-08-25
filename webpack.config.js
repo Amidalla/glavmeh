@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const fs = require('fs');
 const pages = fs.readdirSync(path.resolve(__dirname, 'src')).filter(fileName => fileName.endsWith('.html'));
+const postHtmlInclude = require('posthtml-include');
 
 module.exports = {
     entry: {
@@ -21,6 +22,23 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.html$/i,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: { esModule: false, minimize: false },
+                    },
+                    {
+                        loader: 'posthtml-loader',
+                        options: {
+                            plugins: [
+                                postHtmlInclude({ root: path.resolve(__dirname, 'src') })
+                            ],
+                        },
+                    },
+                ],
+            },
             {
                 test: /\.(s[ac]ss|css)$/i,
                 use: ["style-loader", "css-loader", "sass-loader"],

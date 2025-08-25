@@ -1,129 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-</head>
+
+<include src="layout/head.html"></include>
+
 <body>
-<header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="header__top-content flex">
-                <div class="header__item header__item_geolocation">
-                    г. Санкт-Петербург, ул. Седова, д. 11, БЦ «Эврика», офис 602
-                </div>
-                <div class="header__item header__item_delivery"><a href="#">Доставка</a></div>
-                <div class="header__item header__item_payment"><a href="#">Оплата</a></div>
-                <div class="header__item header__item_email">
-                    <a href="mailto:order36@glavmech.ru" class="header__link">order36@glavmech.ru</a>
-                    <span class="header__description">Для заявок и обратной связи</span>
-                </div>
-                <div class="header__item header__item_telephone">
-                    <a href="tel:+78123365868" class="header__link">+7 (812) 336-58-68</a>
-                    <span class="header__schedule">Пн–Пт: <b>с 10:00 до 18:00</b></span>
-                </div>
-                <div class="header__item header__item_order-call">
-                    <button class="header__button header__button_order-call">Заказать звонок</button>
-                </div>
-                <div class="header__item header__item_basket">
-                    <span class="flex flex-center">0</span>
-                    Корзина
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="header__bottom">
-        <div class="container">
-            <div class="header__bottom-content flex">
-                <div class="header__item header__item_logo">
-                    <a href="#">
-                        <img src="assets/images/glavmech-logo.svg" alt="Логотип компании">
-                    </a>
-                </div>
-                <div class="header__item header__item_catalog">
-                    <button class="header__button header__button_catalog flex flex-center">
-                        <span class="burger flex">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>Каталог
-                    </button>
-                </div>
-                <nav class="header__menu">
-                    <ul class="header__list flex">
-                        <li class="dropdown-item">
-                            <a href="#" class="header__link dropdown">Виброопоры по сериям</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-subitem">ТИП А</a>
-                                <a href="#" class="dropdown-subitem">ТИП В</a>
-                                <a href="#" class="dropdown-subitem">ТИП М</a>
-                            </div>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#" class="header__link dropdown">Виброопоры по назначению</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-subitem">ТИП А</a>
-                                <a href="#" class="dropdown-subitem">ТИП В</a>
-                                <a href="#" class="dropdown-subitem">ТИП М</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#" class="header__link">О компании</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header__link">Услуги</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header__link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header__item header__item_search search">
-                    <button class="header__button header__button_search search__btn">
-                        <img src="assets/images/search.svg" alt="">
-                    </button>
-                    <div class="search__form">
-                        <div class="search__inner">
-                            <img class="search__btn-open" src="assets/images/search.svg" alt="">
-                            <form class="form_search">
-                                <input type="search" placeholder="Введите товар или артикул" name="q">
-                                <input type="submit" class="form_search__btn" value="">
-                            </form>
-                            <div class="search__close">
-                                <img src="assets/images/cross.svg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header__item header__item_callback">
-                    <a href="#form" class="header__button header__button_callback">Оставить заявку</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+
+<include src="layout/header.html"></include>
+
 <main class="inside-page">
     <section class="breadcrumb">
         <div class="container">
@@ -197,19 +80,19 @@
                             <div>
                                 <a href="#">
                                     <h3>Защита от вибрации</h3>
-                                    <img src="assets/images/incide_catalog1.jpg" alt="">
+                                    <img class="lazy" data-src="assets/images/incide_catalog1.jpg" alt="">
                                 </a>
                             </div>
                             <div>
                                 <a href="#">
                                     <h3>Комплектующие</h3>
-                                    <img src="assets/images/incide_catalog2.jpg" alt="">
+                                    <img class="lazy" data-src="assets/images/incide_catalog2.jpg" alt="">
                                 </a>
                             </div>
                             <div>
                                 <a href="#">
                                     <h3>Защитные колпачки</h3>
-                                    <img src="assets/images/incide_catalog3.jpg" alt="">
+                                    <img class="lazy" data-src="assets/images/incide_catalog3.jpg" alt="">
                                 </a>
                             </div>
                         </div>
@@ -219,7 +102,7 @@
                 <section class="main-content additional_content">
                     <div class="main-content__inner">
                         <div class="main-content__inner-left">
-                            <img src="assets/images/catalog-content-img.jpg" alt="">
+                            <img class="lazy" data-src="assets/images/catalog-content-img.jpg" alt="">
                         </div>
                         <div class="main-content__inner-right">
                             <h2>Заголовок</h2>
@@ -234,263 +117,12 @@
         </div>
     </div>
 
-    <section class="main-form" id="form">
-        <div class="main-form__inner">
-            <div class="container">
-                <p class="main-form__title">
-                    Если нужна помощь, обратитесь
-                    к нашему менеджеру
-                </p>
-                <p class="main-form__text">
-                    Ответим на ваши вопросы по оборудованию и поможем подобрать запчасти или аналоги
-                </p>
-                <form class="main-form__form" action="#" method="POST">
-                    <label>
-                        <input type="text" name="name" placeholder="Ваше имя" required>
-                    </label>
-                    <label>
-                        <input type="tel" name="tel" placeholder="Контактный телефон" required>
-                    </label>
-                    <label>
-                        <input type="email" name="email" placeholder="Адрес электронной почты" required>
-                    </label>
-                    <label>
-                        <textarea name="textarea" placeholder="Задайте Ваш вопрос" required></textarea>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="checkbox" required>
-                        <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
-                    </label>
-                    <button type="submit">Получить консультацию</button>
-                </form>
-            </div>
-        </div>
-        <div class="main-form__bg"></div>
-    </section>
+    <include src="layout/form.html"></include>
+
 </main>
-<footer class="footer">
-    <div class="container">
-        <div class="footer__logo">
-            <img src="assets/images/footer-logo.svg" alt="">
-        </div>
-    </div>
-    <div class="footer__inner-top">
-        <div class="container">
-            <div class="footer__contacts">
-                <ul class="footer__list">
-                    <li class="footer__item">
-                        <a href="tel:+78123365868">+7 (812) 336-58-68</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="mailto:order36@glavmech.ru">order36@glavmech.ru</a>
-                    </li>
-                    <li class="footer__item">г. Санкт-Петербург, ул. Седова, д. 11, БЦ «Эврика», офис 602</li>
-                </ul>
-            </div>
-            <ul class="footer__menu">
-                <li class="footer__item-basic">
-                    <span><a href="./catalog.html">Каталог</a></span>
-                    <ul class="footer__submenu">
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Защита от вибрации</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Комплектующие</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Защитные колпачки</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer__item-basic">
-                    <span><a href="#">Компания</a></span>
-                    <ul class="footer__submenu">
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">О компании</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Новости</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Отзывы</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Политика</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer__item-basic">
-                    <span><a href="#">Помощь</a></span>
-                    <ul class="footer__submenu">
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Блог</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Бренды</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer__item-basic">
-                    <span><a href="#">Покупателю</a></span>
-                    <ul class="footer__submenu">
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Условия оплаты</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Условия доставки</a>
-                        </li>
-                        <li class="footer__item-sub">
-                            <a href="#" class="footer__link">Гарантии на товар</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer__inner-bottom">
-        <div class="container">
-            <p>2025 © Главмех - внимание к мелочам</p>
-        </div>
-    </div>
-</footer>
-<div class="modal-catalog">
-    <ul class="modal-catalog__list">
-        <li class="modal-catalog__item">
-            <a class="modal-catalog__link">Защита от вибрации</a>
-            <ul class="modal-catalog__list-dropdown">
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Цилиндрические опоры <span class="quantity">(304)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Резино-металлические антивибрационные опоры <span class="quantity">(357)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Гидравлические опоры <span class="quantity">(21)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Антивибрационные регулируемые опоры <span class="quantity">(30)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Эластомерные пружины <span class="quantity">(20)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Пружинные опоры <span class="quantity">(102)</span></a>
-                </li>
-            </ul>
-        </li>
-        <li class="modal-catalog__item">
-            <a class="modal-catalog__link">Комплектующие</a>
-            <ul class="modal-catalog__list-dropdown">
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Регулируемые опоры <span class="quantity">(304)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Ручки <span class="quantity">(357)</span></a>
-                </li>
-            </ul>
-        </li>
-        <li class="modal-catalog__item">
-            <a class="modal-catalog__link">Защитные колпачки</a>
-            <ul class="modal-catalog__list-dropdown">
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Пластиковые защитные колпачки <span class="quantity">(304)</span></a>
-                </li>
-                <li class="modal-catalog__item-dropdown">
-                    <a href="#" class="modal-catalog__link-dropdown">Виниловые защитные колпачки <span class="quantity">(304)</span></a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<div class="modal-order-call">
-    <div class="modal-order-call__title">Заказать звонок</div>
-    <form class="modal-order-call__form" action="#" method="POST">
-        <label>
-            <input type="text" name="name" placeholder="Ваше имя"  required>
-        </label>
-        <label>
-            <input type="tel" name="tel" placeholder="Контактный телефон" required>
-        </label>
-        <label>
-            <input type="checkbox" name="checkbox" required>
-            <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
-        </label>
-        <button class="modal-order-call__button" type="submit">Отправить</button>
-    </form>
-    <div class="modal-order-call__close">
-        <img src="assets/images/cross.svg" alt="">
-    </div>
-</div>
-<div class="modal-one-click">
-    <div class="modal-one-click__title">Купить в 1 клик</div>
-    <p class="modal-one-click__description">6x7 MM (Тип А) - Антивибрационная опора</p>
-    <form class="modal-one-click__form" action="#" method="POST">
-        <label>
-            <input type="text" name="name" placeholder="Ваше имя"  required>
-        </label>
-        <label>
-            <input type="tel" name="tel" placeholder="Контактный телефон" required>
-        </label>
-        <label>
-            <input type="email" name="email" placeholder="Адрес электронной почты" required>
-        </label>
-        <label>
-            <select name="hardness">
-                <option value="">Твердость</option>
-                <option value="10">10</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-            </select>
-        </label>
-        <label class="quantity-items">
-            <button class="minus">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                    <g clip-path="url(#clip0_60_7561)">
-                        <rect width="27" height="27" fill="white"/>
-                        <rect y="12" width="37" height="2" fill="#D9D9D9"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_60_7561">
-                            <rect width="27" height="27" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </button>
-            <input type="number" min="1" value="1">
-            <span class="unit">шт</span>
-            <button class="plus">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                    <g clip-path="url(#clip0_60_7558)">
-                        <rect width="27" height="27" fill="white"/>
-                        <rect y="12" width="37" height="2" fill="#D9D9D9"/>
-                        <rect x="14" y="-5.5" width="37" height="2" transform="rotate(90 14 -5.5)" fill="#D9D9D9"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_60_7558">
-                            <rect width="27" height="27" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </button>
-        </label>
-        <label>
-            <textarea name="textarea" placeholder="Комментарий" required></textarea>
-        </label>
-        <label class="inline-flex">
-            <input type="checkbox" name="checkbox" required>
-            <span>Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
-        </label>
-        <button class="modal-one-click__button" type="submit">Купить</button>
-    </form>
-    <div class="modal-one-click__close">
-        <img src="assets/images/cross.svg" alt="">
-    </div>
-</div>
-<div class="product-added-modal">
-    <p class="product-added-modal__text">Товар добавлен в корзину</p>
-    <img src="assets/images/product-added.svg">
-</div>
-<div class="overlay"></div>
+
+<include src="layout/footer.html"></include>
+<include src="layout/modals.html"></include>
+
 </body>
 </html>

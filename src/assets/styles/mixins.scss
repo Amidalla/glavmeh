@@ -11,7 +11,7 @@
   text-align: center;
   background-color: $color;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: $hover-color;
@@ -26,7 +26,7 @@
 }
 
 @mixin button-styles2 ($color: c.$blue, $hover-color: c.$dark, $disabled-color: c.$text-grey) {
-  width: 152px;
+  width: 154px;
   height: 40px;
   background: c.$blue;
   color: c.$white;
@@ -37,14 +37,13 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     width: 154px;
     background: c.$white;
     color: c.$dark;
     border: 1px solid c.$blue;
-    width: 154px;
   }
 
   &:disabled {
@@ -73,7 +72,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   box-shadow: 0 4px 8.7px 0 #00000026;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 900;
 
 
@@ -120,7 +119,7 @@
   cursor: pointer;
 
   box-shadow: 0 4px 8.7px 0 $shadow-color;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   position: absolute;
   top: 90%;
 
@@ -192,7 +191,7 @@
     padding: 25px;
     padding-top: 0;
 
-    h4 {
+    h3 {
       font-size: 16px;
       font-weight: 500;
       color: c.$black;

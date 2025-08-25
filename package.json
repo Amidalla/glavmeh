@@ -29,6 +29,12 @@
   },
   "packageManager": "yarn@4.9.2",
   "dependencies": {
-    "swiper": "^11.2.10"
+    "html-loader": "^5.1.0",
+    "posthtml-expressions": "^1.11.4",
+    "posthtml-include": "^2.0.1",
+    "posthtml-inline-svg": "^0.2.0",
+    "posthtml-loader": "^2.0.1",
+    "swiper": "^11.2.10",
+    "vanilla-lazyload": "^19.1.3"
   }
 }
