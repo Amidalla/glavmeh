@@ -41,6 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if (quantityInput) quantityInput.value = count;
     });
 });
+
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -57,6 +59,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
     });
 });
+
 
 // Search functionality
 document.addEventListener('DOMContentLoaded', function() {
