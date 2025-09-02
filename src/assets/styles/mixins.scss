@@ -159,7 +159,6 @@
       @include button-arrow();
       top: $arrow-top;
       transform: rotate(180deg);
-      right: 78px;
       left: calc(100% - 120px);
 
       &::after {

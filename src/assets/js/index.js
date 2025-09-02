@@ -3,10 +3,10 @@ import "../styles/styles.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay, Thumbs } from 'swiper/modules';
 import { SlidersInit } from "./sliders";
 import { InitModals } from "./modals";
-Swiper.use([Pagination, Navigation, Autoplay]);
+Swiper.use([Pagination, Navigation, Autoplay, Thumbs]);
 
 // Initializing Lazy
 
@@ -114,3 +114,126 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     });
 });
+
+
+//filter opening/closing
+document.querySelectorAll('.filter__header').forEach(header => {
+    header.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all open elements
+        document.querySelectorAll('.filter__item.active').forEach(activeItem => {
+            if (activeItem !== item) {
+                activeItem.classList.remove('active');
+            }
+        });
+
+        // Switch the current element
+        if (!isActive) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+});
+
+
+//Text copying
+document.addEventListener('DOMContentLoaded', function() {
+    const copyIcon = document.querySelector('.article_number .copy-icon');
+
+    if (copyIcon) {
+        copyIcon.style.cursor = 'pointer';
+        copyIcon.style.transition = 'opacity 0.3s ease';
+
+        copyIcon.addEventListener('click', function() {
+            const text = this.parentNode.textContent
+                .replace(this.alt, '')
+                .trim();
+
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    console.log('Артикул скопирован:', text);
+
+
+                    this.style.opacity = '0.3';
+
+
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 300);
+                })
+                .catch(err => {
+                    console.error('Ошибка копирования:', err);
+                });
+        });
+    }
+});
+
+//Switching tabs
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.product-tabs__btn');
+    const tabPanes = document.querySelectorAll('.product-tabs__pane');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabId = this.dataset.tab;
+
+
+            tabButtons.forEach(btn => {
+                btn.classList.remove('product-tabs__btn--active');
+            });
+
+
+            tabPanes.forEach(pane => {
+                pane.classList.remove('product-tabs__pane--active');
+            });
+
+
+            this.classList.add('product-tabs__btn--active');
+            document.getElementById(tabId).classList.add('product-tabs__pane--active');
+        });
+    });
+});
+
+
+// Arrow click handler
+document.addEventListener('click', function(e) {
+
+    if (e.target.closest('.mobile-menu__item > img')) {
+        e.preventDefault();
+        const menuItem = e.target.closest('.mobile-menu__item');
+        const sublist = menuItem.querySelector('.mobile-menu__sublist');
+
+        if (sublist) {
+            sublist.classList.toggle('active');
+            menuItem.classList.toggle('active');
+        }
+    }
+
+
+    else if (e.target.closest('.mobile-menu__subitem > img')) {
+        e.preventDefault();
+        const subitem = e.target.closest('.mobile-menu__subitem');
+        const listAdd = subitem.querySelector('.mobile-menu__list_add');
+
+        if (listAdd) {
+            listAdd.classList.toggle('active');
+            subitem.classList.toggle('active');
+        }
+    }
+
+
+    else if (e.target.closest('.mobile-menu__link_sub img')) {
+        e.preventDefault();
+        const linkSub = e.target.closest('.mobile-menu__link_sub');
+        const sublist = linkSub.nextElementSibling;
+
+        if (sublist && sublist.classList.contains('mobile-menu__sublist')) {
+            sublist.classList.toggle('active');
+            linkSub.classList.toggle('active');
+        }
+    }
+});
+

@@ -90,33 +90,12 @@
         </label>
         <label class="modal__quantity">
             <button class="modal__btn-minus" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                    <g clip-path="url(#clip0_60_7561)">
-                        <rect width="27" height="27" fill="white"/>
-                        <rect y="12" width="37" height="2" fill="#D9D9D9"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_60_7561">
-                            <rect width="27" height="27" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
+                <img class="lazy" data-src="../assets/images/minus.svg" alt="">
             </button>
             <input class="modal__input-number" type="number" min="1" value="1">
             <span class="modal__unit">шт</span>
             <button class="modal__btn-plus" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                    <g clip-path="url(#clip0_60_7558)">
-                        <rect width="27" height="27" fill="white"/>
-                        <rect y="12" width="37" height="2" fill="#D9D9D9"/>
-                        <rect x="14" y="-5.5" width="37" height="2" transform="rotate(90 14 -5.5)" fill="#D9D9D9"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_60_7558">
-                            <rect width="27" height="27" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
+                <img class="lazy" data-src="../assets/images/plus.svg" alt="">
             </button>
         </label>
         <label class="modal__field">
@@ -135,5 +114,463 @@
 <div class="notification">
     <p class="notification__text">Товар добавлен в корзину</p>
     <img class="notification__icon lazy" data-src="assets/images/product-added.svg" alt="Успешно">
+</div>
+<div class="modal-delivery">
+    <div class="modal-delivery__inner">
+        <p class="modal-delivery__title">Доставка</p>
+        <p><b>Доставка по СПб</b> от 1 дня<span> (после поступления заказа)</span></p>
+        <p><b>по Москве</b> от 2 дней</p>
+        <p><b>по Екатеринбургу</b> от 6 дней</p>
+        <p><b>Московская обл</b> от 4 дней</p>
+        <p><b>Свердловская обл</b> от 6 дней</p>
+        <div class="modal-delivery__close">
+            <img class="lazy" data-src="assets/images/cross2.svg" alt="">
+        </div>
+    </div>
+</div>
+<div class="mobile-navigation">
+    <div class="mobile-navigation__inner">
+        <div class="mobile-navigation__logo">
+            <a href="/">
+               <img class="lazy" data-src="assets/images/mobile_logo.svg">
+            </a>
+        </div>
+        <nav class="mobile-menu">
+            <ul class="mobile-menu__list">
+                <li class="mobile-menu__item">
+                    <span>Виброопоры по сериям</span>
+                    <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                    <ul class="mobile-menu__sublist">
+                        <li class="mobile-menu__subitem">
+                            <a class="mobile-menu__link_sub" href="#">
+                                Защита от вибрации
+                            </a> <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                            <ul class="mobile-menu__list_add">
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Цилиндрические опоры <span>(304)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Резино-металлические антивибрационные опоры <span>(357)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Гидравлические опоры <span>(21)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Антивибрационные регулируемые опоры <span>(30)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Эластомерные пружины <span>(20)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu__item_add">
+                                    <a class="mobile-menu__link_add" href="#">
+                                        Пружинные опоры <span>(102)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu__subitem">
+                            <a class="mobile-menu__link_sub" href="#">
+                                Пружинные опоры
+                            </a>
+                            <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                        </li>
+                        <li class="mobile-menu__subitem">
+                            <a class="mobile-menu__link_sub" href="#">
+                                Комплектующие
+                            </a>
+                            <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                        </li>
+                        <li class="mobile-menu__subitem">
+                            <a class="mobile-menu__link_sub" href="#">
+                                Защитные колпачки
+                            </a>
+                            <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                        </li>
+                    </ul>
+                </li>
+                <li class="mobile-menu__item">
+                    <span>Виброопоры по назначению</span>
+                    <img class="lazy" data-src="assets/images/mobile_menu_arrow.svg">
+                </li>
+                <li class="mobile-menu__item">
+                    <a class="mobile-menu__link" href="#">О компании</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a class="mobile-menu__link" href="#">Услуги</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a class="mobile-menu__link" href="#">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-menu__close">
+            <img class="lazy" data-src="assets/images/mobile_menu_close.svg">
+        </div>
+    </div>
+</div>
+<div class="modal-filter">
+    <div class="filter">
+        <form class="filter__form" action="" method="POST">
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">А (мм)</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="a[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">B (мм)</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="b[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">C (мм)</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">М (мм)</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">Материал металлических частей</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__header">
+                    <span class="filter__toggle">Твердость</span>
+                </div>
+                <div class="filter__content">
+                    <div class="filter__variants">
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="10">
+                                <span>10</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="100">
+                                <span>100</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="105">
+                                <span>105</span>
+                            </label>
+                        </div>
+                        <div class="filter__inner">
+                            <label>
+                                <input type="checkbox" name="c[]" value="120">
+                                <span>120</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-filter__controls-">
+                <button class="show-btn">Показать</button>
+                <button class="reset-btn">Сбросить</button>
+            </div>
+        </form>
+        <div class="modal-filter__close">
+            <img class="lazy" data-src="assets/images/filter_close.svg" alt="">
+        </div>
+    </div>
 </div>
 <div class="overlay"></div>
