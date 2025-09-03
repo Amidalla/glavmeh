@@ -9,39 +9,83 @@ import { InitModals } from "./modals";
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs]);
 
 // Initializing Lazy
-
 const lazyLoadInstance = new LazyLoad({});
 
 // Initializing sliders
-
 SlidersInit();
 
 // Modal functions
-
 InitModals();
 
 // Quantity counter functionality
 window.addEventListener('DOMContentLoaded', () => {
-    const minusButton = document.querySelector('.modal__btn-minus');
-    const plusButton = document.querySelector('.modal__btn-plus');
-    const quantityInput = document.querySelector('.modal__quantity input');
 
-    minusButton?.addEventListener('click', function(e) {
-        e.preventDefault();
-        let count = parseInt(quantityInput?.value || 1) - 1;
-        count = Math.max(count, 1);
-        if (quantityInput) quantityInput.value = count;
-    });
+    const quantityElements = document.querySelectorAll('.modal__quantity');
 
-    plusButton?.addEventListener('click', function(e) {
-        e.preventDefault();
-        let count = parseInt(quantityInput?.value || 1) + 1;
-        const maxValue = 100;
-        count = Math.min(count, maxValue);
-        if (quantityInput) quantityInput.value = count;
+    quantityElements.forEach(quantityElement => {
+        const minusButton = quantityElement.querySelector('.modal__btn-minus');
+        const plusButton = quantityElement.querySelector('.modal__btn-plus');
+        const quantityInput = quantityElement.querySelector('input');
+
+        minusButton?.addEventListener('click', function(e) {
+            e.preventDefault();
+            let count = parseInt(quantityInput?.value || 1) - 1;
+            count = Math.max(count, 1);
+            if (quantityInput) quantityInput.value = count;
+        });
+
+        plusButton?.addEventListener('click', function(e) {
+            e.preventDefault();
+            let count = parseInt(quantityInput?.value || 1) + 1;
+            const maxValue = 100;
+            count = Math.min(count, maxValue);
+            if (quantityInput) quantityInput.value = count;
+        });
+
+
+        quantityInput?.addEventListener('change', function() {
+            let count = parseInt(this.value) || 1;
+            count = Math.max(1, Math.min(count, 100));
+            this.value = count;
+        });
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const element = document.querySelector('.product-card__info.purchase-info.purchase-fixed');
+    if (!element) return;
+
+    const scrollThreshold = 200;
+    let isVisible = false;
+
+    function handleScroll() {
+        const shouldBeVisible = window.scrollY > scrollThreshold;
+
+        if (shouldBeVisible !== isVisible) {
+            isVisible = shouldBeVisible;
+
+            if (shouldBeVisible) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        }
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -59,7 +103,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
     });
 });
-
 
 // Search functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -115,21 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 //filter opening/closing
 document.querySelectorAll('.filter__header').forEach(header => {
     header.addEventListener('click', function() {
         const item = this.parentElement;
         const isActive = item.classList.contains('active');
 
-        // Close all open elements
+
         document.querySelectorAll('.filter__item.active').forEach(activeItem => {
             if (activeItem !== item) {
                 activeItem.classList.remove('active');
             }
         });
 
-        // Switch the current element
+
         if (!isActive) {
             item.classList.add('active');
         } else {
@@ -137,7 +179,6 @@ document.querySelectorAll('.filter__header').forEach(header => {
         }
     });
 });
-
 
 //Text copying
 document.addEventListener('DOMContentLoaded', function() {
@@ -155,11 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navigator.clipboard.writeText(text)
                 .then(() => {
                     console.log('Артикул скопирован:', text);
-
-
                     this.style.opacity = '0.3';
-
-
                     setTimeout(() => {
                         this.style.opacity = '1';
                     }, 300);
@@ -180,16 +217,13 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const tabId = this.dataset.tab;
 
-
             tabButtons.forEach(btn => {
                 btn.classList.remove('product-tabs__btn--active');
             });
 
-
             tabPanes.forEach(pane => {
                 pane.classList.remove('product-tabs__pane--active');
             });
-
 
             this.classList.add('product-tabs__btn--active');
             document.getElementById(tabId).classList.add('product-tabs__pane--active');
@@ -197,10 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 // Arrow click handler
 document.addEventListener('click', function(e) {
-
     if (e.target.closest('.mobile-menu__item > img')) {
         e.preventDefault();
         const menuItem = e.target.closest('.mobile-menu__item');
@@ -211,8 +243,6 @@ document.addEventListener('click', function(e) {
             menuItem.classList.toggle('active');
         }
     }
-
-
     else if (e.target.closest('.mobile-menu__subitem > img')) {
         e.preventDefault();
         const subitem = e.target.closest('.mobile-menu__subitem');
@@ -223,8 +253,6 @@ document.addEventListener('click', function(e) {
             subitem.classList.toggle('active');
         }
     }
-
-
     else if (e.target.closest('.mobile-menu__link_sub img')) {
         e.preventDefault();
         const linkSub = e.target.closest('.mobile-menu__link_sub');
@@ -237,3 +265,40 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Fixed purchase info functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const element = document.querySelector('.product-card__info.purchase-info.purchase-fixed');
+
+
+    if (!element) return;
+
+    const scrollThreshold = 300;
+    let isVisible = false;
+
+    function handleScroll() {
+        const shouldBeVisible = window.scrollY > scrollThreshold;
+
+        if (shouldBeVisible !== isVisible) {
+            isVisible = shouldBeVisible;
+
+            if (shouldBeVisible) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        }
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});

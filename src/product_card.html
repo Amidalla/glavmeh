@@ -107,6 +107,13 @@
                             </div>
                         </div>
                         <div class="product-card__btn_mobile">Подробнее</div>
+                        <div class="modal-delivery_mobile">
+                                <p class="delivery-information">по МСК от 2 дней</p>
+                                <p class="delivery-information">по ЕКБ от 6 дней</p>
+                                <div class="mobile-btn-close">
+                                    <img class="lazy" data-src="assets/images/cross.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="product-card__equipment equipment">
                         <p class="equipment__title">Подходит для оборудования:</p>
@@ -450,5 +457,23 @@
 <include src="layout/footer.html"></include>
 <include src="layout/modals.html"></include>
 
+<div class="product-card__info purchase-info purchase-fixed">
+    <div class="purchase-info__price">
+        от <span>90 ₽</span>
+    </div>
+    <div class="purchase-info__form">
+        <label class="modal__quantity">
+            <button class="modal__btn-minus" type="button">
+                <img class="lazy" data-src="../assets/images/minus.svg" alt="">
+            </button>
+            <input class="modal__input-number" type="number" min="1" value="1">
+            <span class="modal__unit">шт</span>
+            <button class="modal__btn-plus" type="button">
+                <img class="lazy" data-src="../assets/images/plus.svg" alt="">
+            </button>
+        </label>
+        <button class="purchase-info__btn">В корзину</button>
+    </div>
+</div>
 </body>
 </html>

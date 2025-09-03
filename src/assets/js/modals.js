@@ -5,6 +5,7 @@ export function InitModals() {
     const modal = document.querySelector(".modal");
     const notification = document.querySelector(".notification");
     const modalDelivery = document.querySelector(".modal-delivery");
+    const modalDeliveryMobile = document.querySelector(".modal-delivery_mobile");
     const modalFilter = document.querySelector(".modal-filter");
     const overlay = document.querySelector(".overlay");
     const mobileNavigation = document.querySelector(".mobile-navigation");
@@ -30,9 +31,11 @@ export function InitModals() {
     const modalCallCloseButton = document.querySelector(".modal-call__close");
     const modalCloseButton = document.querySelector(".modal__close");
     const modalDeliveryClose = document.querySelector(".modal-delivery__close");
+    const modalDeliveryMobileClose = document.querySelector(".modal-delivery_mobile__close");
     const modalFilterClose = document.querySelector(".modal-filter__close");
+    const mobileBtnClose = document.querySelector(".mobile-btn-close");
 
-    // Функции для работы с модальными окнами
+
     function openModal(modalElement, buttonElement = null, useOverlay = true) {
         modalElement?.classList.add('opened');
         buttonElement?.classList.add('opened');
@@ -57,7 +60,7 @@ export function InitModals() {
         }
     }
 
-    // Mobile navigation functions
+
     function openMobileMenu() {
         mobileNavigation?.classList.add('opened');
         overlay?.classList.add('opened');
@@ -68,7 +71,7 @@ export function InitModals() {
         overlay?.classList.remove('opened');
     }
 
-    // Event listeners for mobile menu
+
     btnMenu?.addEventListener('click', (event) => {
         event.preventDefault();
         openMobileMenu();
@@ -79,13 +82,13 @@ export function InitModals() {
         closeMobileMenu();
     });
 
-    // Event listeners for modals
+
     catalogButton?.addEventListener('click', (event) => {
         event.preventDefault();
         toggleModal(catalogModal, catalogButton, false);
     });
 
-    // Event listeners for all .btn-call buttons
+
     orderCallButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
@@ -98,7 +101,7 @@ export function InitModals() {
         toggleModal(modalDelivery, null, true);
     });
 
-    // Event listeners for .purchase-info__btn buttons
+
     purchaseInfoButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
@@ -119,7 +122,20 @@ export function InitModals() {
         closeModal(modalDelivery, null, true);
     });
 
-    // Event listeners for one-click buttons
+    modalDeliveryMobileClose?.addEventListener('click', () => {
+        closeModal(modalDeliveryMobile, null, true);
+    });
+
+
+    mobileBtnClose?.addEventListener('click', () => {
+        closeModal(modalDeliveryMobile, null, true);
+    });
+
+    modalFilterClose?.addEventListener('click', () => {
+        closeModal(modalFilter, null, true);
+    });
+
+
     const allOneClickButtons = [
         ...oneClickButtons,
         ...recommendedOneClickButtons,
@@ -135,7 +151,7 @@ export function InitModals() {
         });
     });
 
-    // Event listeners for .filter-mobile_btn buttons
+
     filterMobileButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
@@ -143,20 +159,21 @@ export function InitModals() {
         });
     });
 
-    // Event listeners for .product-card__btn_mobile buttons
+
     productCardMobileButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            toggleModal(modalDelivery, null, true);
+
+            if (window.innerWidth <= 1250) {
+
+                const useOverlay = window.innerWidth <= 767;
+                toggleModal(modalDeliveryMobile, null, useOverlay);
+            }
         });
     });
 
     modalCloseButton?.addEventListener('click', () => {
         closeModal(modal, null, true);
-    });
-
-    modalFilterClose?.addEventListener('click', () => {
-        closeModal(modalFilter, null, true);
     });
 
     addToCartButtons?.forEach(button => {
@@ -168,7 +185,7 @@ export function InitModals() {
 
     // Close modals on outside click
     document.addEventListener('click', (event) => {
-        // Mobile menu outside click
+
         if (mobileNavigation?.classList.contains('opened') &&
             !mobileNavigation.contains(event.target) &&
             !btnMenu?.contains(event.target)) {
@@ -203,9 +220,15 @@ export function InitModals() {
 
         if (modalDelivery?.classList.contains('opened') &&
             !modalDelivery.contains(event.target) &&
-            !purchaseInfoLink?.contains(event.target) &&
-            !Array.from(productCardMobileButtons).some(btn => btn.contains(event.target))) {
+            !purchaseInfoLink?.contains(event.target)) {
             closeModal(modalDelivery, null, true);
+        }
+
+        if (modalDeliveryMobile?.classList.contains('opened') &&
+            !modalDeliveryMobile.contains(event.target) &&
+            !Array.from(productCardMobileButtons).some(btn => btn.contains(event.target)) &&
+            !mobileBtnClose?.contains(event.target)) {
+            closeModal(modalDeliveryMobile, null, window.innerWidth <= 767);
         }
 
         if (modalFilter?.classList.contains('opened') &&
@@ -225,6 +248,7 @@ export function InitModals() {
                 { modal: modal, callback: () => closeModal(modal, null, true) },
                 { modal: notification, callback: () => closeModal(notification, null, true) },
                 { modal: modalDelivery, callback: () => closeModal(modalDelivery, null, true) },
+                { modal: modalDeliveryMobile, callback: () => closeModal(modalDeliveryMobile, null, window.innerWidth <= 767) },
                 { modal: modalFilter, callback: () => closeModal(modalFilter, null, true) }
             ];
 
@@ -246,6 +270,7 @@ export function InitModals() {
                 { modal: modal, callback: () => closeModal(modal, null, true) },
                 { modal: notification, callback: () => closeModal(notification, null, true) },
                 { modal: modalDelivery, callback: () => closeModal(modalDelivery, null, true) },
+                { modal: modalDeliveryMobile, callback: () => closeModal(modalDeliveryMobile, null, window.innerWidth <= 767) },
                 { modal: modalFilter, callback: () => closeModal(modalFilter, null, true) }
             ];
 

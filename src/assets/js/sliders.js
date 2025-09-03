@@ -169,7 +169,7 @@ export function SlidersInit() {
                 spaceBetween: 20
             },
             1000: {
-                slides极View: 3,
+                slidesPerView: 3,
                 spaceBetween: 30
             },
             1391: {
