@@ -8,17 +8,18 @@ import { SlidersInit } from "./sliders";
 import { InitModals } from "./modals";
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs]);
 
-// Initializing Lazy
-const lazyLoadInstance = new LazyLoad({});
-
-// Initializing sliders
-SlidersInit();
-
-// Modal functions
-InitModals();
 
 // Quantity counter functionality
 window.addEventListener('DOMContentLoaded', () => {
+    // Initializing Lazy
+        const lazyLoadInstance = new LazyLoad({});
+
+    // Initializing sliders
+        SlidersInit();
+
+    // Modal functions
+        InitModals();
+
 
     const quantityElements = document.querySelectorAll('.modal__quantity');
 

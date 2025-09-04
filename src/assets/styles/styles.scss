@@ -1270,6 +1270,7 @@
     @include items-slider();
 
     .swiper-slide {
+
         @media(max-width:1390px) {
             max-width: none;
             height: 350px;
