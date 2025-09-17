@@ -36,11 +36,48 @@ export function InitModals() {
     const mobileBtnClose = document.querySelector(".mobile-btn-close");
 
 
+    let scrollPosition = 0;
+    let isScrollLocked = false;
+
+
+    function disableScroll() {
+        if (isScrollLocked) return;
+
+
+        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+
+        isScrollLocked = true;
+    }
+
+
+    function enableScroll() {
+        if (!isScrollLocked) return;
+
+
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+
+
+        window.scrollTo(0, scrollPosition);
+        isScrollLocked = false;
+    }
+
     function openModal(modalElement, buttonElement = null, useOverlay = true) {
         modalElement?.classList.add('opened');
         buttonElement?.classList.add('opened');
         if (useOverlay) {
             overlay?.classList.add('opened');
+            disableScroll();
         }
     }
 
@@ -49,6 +86,7 @@ export function InitModals() {
         buttonElement?.classList.remove('opened');
         if (useOverlay) {
             overlay?.classList.remove('opened');
+            enableScroll();
         }
     }
 
@@ -60,15 +98,16 @@ export function InitModals() {
         }
     }
 
-
     function openMobileMenu() {
         mobileNavigation?.classList.add('opened');
         overlay?.classList.add('opened');
+        disableScroll();
     }
 
     function closeMobileMenu() {
         mobileNavigation?.classList.remove('opened');
         overlay?.classList.remove('opened');
+        enableScroll();
     }
 
 
@@ -82,12 +121,15 @@ export function InitModals() {
         closeMobileMenu();
     });
 
-
     catalogButton?.addEventListener('click', (event) => {
         event.preventDefault();
+        if (catalogModal?.classList.contains('opened')) {
+            enableScroll();
+        } else {
+            disableScroll();
+        }
         toggleModal(catalogModal, catalogButton, false);
     });
-
 
     orderCallButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
@@ -100,7 +142,6 @@ export function InitModals() {
         event.preventDefault();
         toggleModal(modalDelivery, null, true);
     });
-
 
     purchaseInfoButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
@@ -126,7 +167,6 @@ export function InitModals() {
         closeModal(modalDeliveryMobile, null, true);
     });
 
-
     mobileBtnClose?.addEventListener('click', () => {
         closeModal(modalDeliveryMobile, null, true);
     });
@@ -134,7 +174,6 @@ export function InitModals() {
     modalFilterClose?.addEventListener('click', () => {
         closeModal(modalFilter, null, true);
     });
-
 
     const allOneClickButtons = [
         ...oneClickButtons,
@@ -151,7 +190,6 @@ export function InitModals() {
         });
     });
 
-
     filterMobileButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
@@ -159,15 +197,15 @@ export function InitModals() {
         });
     });
 
-
     productCardMobileButtons?.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-
             if (window.innerWidth <= 1250) {
-
                 const useOverlay = window.innerWidth <= 767;
                 toggleModal(modalDeliveryMobile, null, useOverlay);
+                if (!useOverlay) {
+                    disableScroll();
+                }
             }
         });
     });
@@ -185,7 +223,6 @@ export function InitModals() {
 
     // Close modals on outside click
     document.addEventListener('click', (event) => {
-
         if (mobileNavigation?.classList.contains('opened') &&
             !mobileNavigation.contains(event.target) &&
             !btnMenu?.contains(event.target)) {
@@ -196,6 +233,7 @@ export function InitModals() {
             !catalogModal.contains(event.target) &&
             !catalogButton?.contains(event.target)) {
             closeModal(catalogModal, catalogButton, false);
+            enableScroll();
         }
 
         if (modalCall?.classList.contains('opened') &&
@@ -228,7 +266,11 @@ export function InitModals() {
             !modalDeliveryMobile.contains(event.target) &&
             !Array.from(productCardMobileButtons).some(btn => btn.contains(event.target)) &&
             !mobileBtnClose?.contains(event.target)) {
-            closeModal(modalDeliveryMobile, null, window.innerWidth <= 767);
+            const useOverlay = window.innerWidth <= 767;
+            closeModal(modalDeliveryMobile, null, useOverlay);
+            if (!useOverlay) {
+                enableScroll();
+            }
         }
 
         if (modalFilter?.classList.contains('opened') &&
@@ -243,12 +285,18 @@ export function InitModals() {
         if (event.key === 'Escape') {
             const openedModals = [
                 { modal: mobileNavigation, callback: closeMobileMenu },
-                { modal: catalogModal, callback: () => closeModal(catalogModal, catalogButton, false) },
+                { modal: catalogModal, callback: () => { closeModal(catalogModal, catalogButton, false); enableScroll(); } },
                 { modal: modalCall, callback: () => closeModal(modalCall, null, true) },
                 { modal: modal, callback: () => closeModal(modal, null, true) },
                 { modal: notification, callback: () => closeModal(notification, null, true) },
                 { modal: modalDelivery, callback: () => closeModal(modalDelivery, null, true) },
-                { modal: modalDeliveryMobile, callback: () => closeModal(modalDeliveryMobile, null, window.innerWidth <= 767) },
+                { modal: modalDeliveryMobile, callback: () => {
+                        const useOverlay = window.innerWidth <= 767;
+                        closeModal(modalDeliveryMobile, null, useOverlay);
+                        if (!useOverlay) {
+                            enableScroll();
+                        }
+                    }},
                 { modal: modalFilter, callback: () => closeModal(modalFilter, null, true) }
             ];
 
@@ -270,7 +318,7 @@ export function InitModals() {
                 { modal: modal, callback: () => closeModal(modal, null, true) },
                 { modal: notification, callback: () => closeModal(notification, null, true) },
                 { modal: modalDelivery, callback: () => closeModal(modalDelivery, null, true) },
-                { modal: modalDeliveryMobile, callback: () => closeModal(modalDeliveryMobile, null, window.innerWidth <= 767) },
+                { modal: modalDeliveryMobile, callback: () => closeModal(modalDeliveryMobile, null, true) },
                 { modal: modalFilter, callback: () => closeModal(modalFilter, null, true) }
             ];
 
@@ -282,4 +330,9 @@ export function InitModals() {
             }
         }
     });
+
+
+    return () => {
+        enableScroll();
+    };
 }
