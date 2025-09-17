@@ -5,6 +5,10 @@ html {
     scrollbar-gutter: stable;
 }
 
+body {
+    overflow: hidden;
+}
+
 .header {
     &__top {
         padding-top: 22px;
@@ -5211,6 +5215,10 @@ h1.inside-page__name {
 
         @media(max-width: 767px) {
             background: none;
+        }
+
+        @media(max-width: 479px) {
+             height: 405px;
         }
 
         img {
