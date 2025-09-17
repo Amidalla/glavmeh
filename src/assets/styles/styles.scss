@@ -3479,7 +3479,7 @@ body {
     &__close {
         position: absolute;
         top: 28.5px;
-        right: 58.5px;
+        right: 28.5px;
         cursor: pointer;
     }
 }
@@ -3556,7 +3556,7 @@ body {
     &__close {
         position: absolute;
         top: 28.5px;
-        right: 58.5px;
+        right: 28.5px;
         cursor: pointer;
     }
 
@@ -6461,23 +6461,6 @@ h1.inside-page__name {
     .filter {
         overflow-y: auto;
         max-height: 70vh;
-        padding-right: 15px;
-        padding-left: 15px;
-
-        &::-webkit-scrollbar {
-           width: 2px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: c.$light-gray;
-            border-radius: 100px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: c.$orange;
-            border-radius: 100px;
-        }
-
     }
 }
 
@@ -6488,23 +6471,6 @@ h1.inside-page__name {
     .modal-inner {
         overflow-y: auto;
         max-height: 70vh;
-        padding-right: 15px;
-        padding-left: 15px;
-
-        &::-webkit-scrollbar {
-            width: 2px;
-            opacity: 0;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: c.$light-gray;
-            border-radius: 100px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: c.$orange;
-            border-radius: 100px;
-        }
 
     }
 }
