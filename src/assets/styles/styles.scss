@@ -1289,7 +1289,7 @@ html {
         }
 
         @media(max-width:479px) {
-            height: 444px;
+            height: 405px;
         }
 
 
@@ -1461,6 +1461,10 @@ html {
             max-width: none;
             height: 350px;
         }
+        @media(max-width: 1390px) {
+            height: 405px;
+        }
+
 
     }
 
@@ -3349,6 +3353,7 @@ html {
 
         @media(max-width: 720px) {
             width: 100%;
+            max-width: 100%;
             padding: 77px 20px 82px 20px;
         }
     }
@@ -3468,7 +3473,7 @@ html {
     &__close {
         position: absolute;
         top: 28.5px;
-        right: 58.5px;
+        right: 38.5px;
         cursor: pointer;
     }
 }
@@ -3487,6 +3492,7 @@ html {
     @media(max-width: 848px) {
         padding: 30px 20px 30px 20px;
         width: 100%;
+        max-width: 100%;
     }
 
     @media(max-width: 450px) {
@@ -3544,7 +3550,7 @@ html {
     &__close {
         position: absolute;
         top: 28.5px;
-        right: 58.5px;
+        right: 38.5px;
         cursor: pointer;
     }
 
@@ -6011,8 +6017,8 @@ h1.inside-page__name {
 
     &__close {
         position: absolute;
-        top: 30px;
-        right: 40px;
+        top: 25px;
+        right: 25px;
         cursor: pointer;
     }
 
@@ -6370,11 +6376,6 @@ h1.inside-page__name {
             max-width: 192px;
         }
     }
-
-    @media (max-width: 500px) {
-         top: 110px;
-    }
-
 
     @media(max-width: 430px) {
 
