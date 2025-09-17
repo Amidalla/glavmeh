@@ -3243,6 +3243,10 @@ body {
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 
+    @media (max-width: 1390px) {
+        display: none;
+    }
+
     &.opened {
         transition: all 0.5s;
         visibility: visible;
@@ -3318,11 +3322,13 @@ body {
     background: rgba(225, 225, 225, 0.75);
     width: 100%;
     height: 100%;
+    display: none;
 
     &.opened {
         visibility: visible;
         opacity: 1;
         z-index: 999;
+        display: block;
     }
 }
 
@@ -3336,6 +3342,7 @@ body {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
     &__form {
         @media(max-width: 720px) {
@@ -3356,6 +3363,7 @@ body {
         transition: all 0.25s;
         visibility: visible;
         opacity: 1;
+        display: block;
 
         @media(max-width: 720px) {
             width: 100%;
@@ -3494,6 +3502,7 @@ body {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
     @media(max-width: 848px) {
         padding: 30px 20px 30px 20px;
@@ -3532,6 +3541,7 @@ body {
         transition: all 0.25s;
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 
     &__title {
@@ -3979,6 +3989,7 @@ form {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
     @media(max-width: 380px) {
         width: 100%;
@@ -3988,6 +3999,7 @@ form {
         transition: all 0.25s;
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 
     &__text {
@@ -5433,6 +5445,7 @@ h1.inside-page__name {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
 
     @media(max-width: 599px) {
@@ -5444,6 +5457,7 @@ h1.inside-page__name {
         transition: all 0.25s;
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 
 
@@ -5832,6 +5846,7 @@ h1.inside-page__name {
     z-index: 1000;
     transition: right 0.5s ease-in-out;
     overflow-y: auto;
+    display: none;
 
     @media(max-width: 500px) {
         padding: 20px;
@@ -5839,6 +5854,7 @@ h1.inside-page__name {
 
     &.opened {
         right: 0;
+        display: block;
     }
 
     &__inner {
@@ -6009,6 +6025,7 @@ h1.inside-page__name {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
     @media(max-width: 767px) {
         min-width: 100%;
@@ -6023,6 +6040,7 @@ h1.inside-page__name {
         transition: all 0.25s;
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 
     &__close {
