@@ -7,7 +7,7 @@
 
 <include src="layout/header.html"></include>
 
-<main class="main">
+<main class="main main_product-card">
     <section class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb__inner">
@@ -61,8 +61,32 @@
                         </div>
                     </div>
                 </div>
-
-
+                <div class="card-slider_tablet">
+                    <div class="card-slider_tablet__thumbs swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 1" class="card-slider__thumb lazy">
+                            </div>
+                            <div class="swiper-slide">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 2" class="card-slider__thumb lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-slider_tablet__main swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img data-src="assets/images/card_slider.png" alt="Товар 1" class="card-slider__image lazy">
+                            </div>
+                            <div class="swiper-slide">
+                                <img data-src="assets/images/card_slider.png" alt="Товар 2" class="card-slider__image lazy">
+                            </div>
+                        </div>
+                        <div class="card-slider_tablet__navigation">
+                            <button class="card-slider_tablet__arrow card-slider_tablet__arrow--prev"></button>
+                            <button class="card-slider_tablet__arrow card-slider_tablet__arrow--next"></button>
+                        </div>
+                    </div>
+                </div>
                 <div class="product-card__properties">
                     <div class="article_number">Артикул: A1MM1015-12
                         <img class="lazy copy-icon" data-src="assets/images/copy.svg" alt="Копировать">

@@ -29,7 +29,7 @@ module.exports = (env, argv) => {
         devServer: {
             static: "./src",
             compress: true,
-            port: 9000,
+            port: 9003,
             hot: true,
         },
         module: {
@@ -50,6 +50,16 @@ module.exports = (env, argv) => {
                                             attribute: 'data-src',
                                             type: 'src',
                                         },
+                                        {
+                                            tag: 'source',
+                                            attribute: 'src',
+                                            type: 'src',
+                                        },
+                                        {
+                                            tag: 'video',
+                                            attribute: 'poster',
+                                            type: 'src',
+                                        }
                                     ],
                                 }
                             },

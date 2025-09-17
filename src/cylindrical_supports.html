@@ -554,7 +554,11 @@
                 <section class="main-content additional_content">
                     <div class="main-content__inner">
                         <div class="main-content__inner-left">
-                            <img class="lazy entered loaded" data-src="assets/images/catalog-content-img.jpg" alt="" data-ll-status="loaded" src="assets/images/catalog-content-img.jpg">
+                            <picture>
+                                <source media="(max-width: 760px)" data-srcset="assets/images/mob_img.jpg" srcset="assets/images/mob_img.jpg">
+                                <source media="(max-width: 1300px)" data-srcset="assets/images/tablet_img.jpg" srcset="assets/images/tablet_img.jpg">
+                                <img class="lazy" data-src="assets/images/catalog-content-img.jpg" alt="">
+                            </picture>
                         </div>
                         <div class="main-content__inner-right">
                             <h2>Заголовок</h2>

@@ -48,68 +48,72 @@
     </ul>
 </div>
 <div class="modal-call">
-    <div class="modal-call__title">Заказать звонок</div>
-    <form class="modal-call__form" action="#" method="POST">
-        <label class="modal-call__field">
-            <input class="modal-call__input" type="text" name="name" placeholder="Ваше имя" required>
-        </label>
-        <label class="modal-call__field">
-            <input class="modal-call__input" type="tel" name="tel" placeholder="Контактный телефон" required>
-        </label>
-        <label class="modal-call__check">
-            <input class="modal-call__checkbox" type="checkbox" name="checkbox" required>
-            <span class="modal-call__text">Я принимаю условия использования <a href="#" class="modal-call__link">Персональных данных</a> и даю согласие на <a href="#" class="modal-call__link">Обработку персональных данных</a></span>
-        </label>
-        <button class="modal-call__btn" type="submit">Отправить</button>
-    </form>
-    <button class="modal-call__close">
-        <img class="modal-call__close-icon lazy" data-src="assets/images/cross.svg" alt="Закрыть">
-    </button>
+    <div class="modal-call_inner">
+        <div class="modal-call__title">Заказать звонок</div>
+        <form class="modal-call__form" action="#" method="POST">
+            <label class="modal-call__field">
+                <input class="modal-call__input" type="text" name="name" placeholder="Ваше имя" required>
+            </label>
+            <label class="modal-call__field">
+                <input class="modal-call__input" type="tel" name="tel" placeholder="Контактный телефон" required>
+            </label>
+            <label class="modal-call__check">
+                <input class="modal-call__checkbox" type="checkbox" name="checkbox" required>
+                <span class="modal-call__text">Я принимаю условия использования <a href="#" class="modal-call__link">Персональных данных</a> и даю согласие на <a href="#" class="modal-call__link">Обработку персональных данных</a></span>
+            </label>
+            <button class="modal-call__btn" type="submit">Отправить</button>
+        </form>
+        <button class="modal-call__close">
+            <img class="modal-call__close-icon lazy" data-src="assets/images/cross.svg" alt="Закрыть">
+        </button>
+    </div>
 </div>
 <div class="modal">
-    <div class="modal__title">Купить в 1 клик</div>
-    <p class="modal__description">6x7 MM (Тип А) - Антивибрационная опора</p>
-    <form class="modal__form" action="#" method="POST">
-        <label class="modal__field">
-            <input class="modal__input" type="text" name="name" placeholder="Ваше имя" required>
-        </label>
-        <label class="modal__field">
-            <input class="modal__input" type="tel" name="tel" placeholder="Контактный телефон" required>
-        </label>
-        <label class="modal__field">
-            <input class="modal__input" type="email" name="email" placeholder="Адрес электронной почты" required>
-        </label>
-        <label class="modal__field">
-            <select class="modal__select" name="hardness">
-                <option value="">Твердость</option>
-                <option value="10">10</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-            </select>
-        </label>
-        <label class="modal__quantity">
-            <button class="modal__btn-minus" type="button">
-                <img class="lazy" data-src="assets/images/minus.svg" alt="">
-            </button>
-            <input class="modal__input-number" type="number" min="1" value="1">
-            <span class="modal__unit">шт</span>
-            <button class="modal__btn-plus" type="button">
-                <img class="lazy" data-src="assets/images/plus.svg" alt="">
-            </button>
-        </label>
-        <label class="modal__field">
-            <textarea class="modal__textarea" name="textarea" placeholder="Комментарий" required></textarea>
-        </label>
-        <label class="modal__checkbox">
-            <input class="modal__checkbox-input" type="checkbox" name="checkbox" required>
-            <span class="modal__checkbox-text">Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
-        </label>
-        <button class="modal__submit" type="submit">Купить</button>
-    </form>
-    <button class="modal__close" type="button">
-        <img class="modal__close-icon lazy" data-src="assets/images/cross.svg" alt="Закрыть">
-    </button>
+    <div class="modal-inner">
+        <div class="modal__title">Купить в 1 клик</div>
+        <p class="modal__description">6x7 MM (Тип А) - Антивибрационная опора</p>
+        <form class="modal__form" action="#" method="POST">
+            <label class="modal__field">
+                <input class="modal__input" type="text" name="name" placeholder="Ваше имя" required>
+            </label>
+            <label class="modal__field">
+                <input class="modal__input" type="tel" name="tel" placeholder="Контактный телефон" required>
+            </label>
+            <label class="modal__field">
+                <input class="modal__input" type="email" name="email" placeholder="Адрес электронной почты" required>
+            </label>
+            <label class="modal__field">
+                <select class="modal__select" name="hardness">
+                    <option value="">Твердость</option>
+                    <option value="10">10</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                </select>
+            </label>
+            <label class="modal__quantity">
+                <button class="modal__btn-minus" type="button">
+                    <img class="lazy" data-src="assets/images/minus.svg" alt="">
+                </button>
+                <input class="modal__input-number" type="number" min="1" value="1">
+                <span class="modal__unit">шт</span>
+                <button class="modal__btn-plus" type="button">
+                    <img class="lazy" data-src="assets/images/plus.svg" alt="">
+                </button>
+            </label>
+            <label class="modal__field">
+                <textarea class="modal__textarea" name="textarea" placeholder="Комментарий" required></textarea>
+            </label>
+            <label class="modal__checkbox">
+                <input class="modal__checkbox-input" type="checkbox" name="checkbox" required>
+                <span class="modal__checkbox-text">Я принимаю условия использования <a href="#">Персональных данных</a> и даю согласие на <a href="#">Обработку персональных данных</a></span>
+            </label>
+            <button class="modal__submit" type="submit">Купить</button>
+        </form>
+        <button class="modal__close" type="button">
+            <img class="modal__close-icon lazy" data-src="assets/images/cross.svg" alt="Закрыть">
+        </button>
+    </div>
 </div>
 <div class="notification">
     <p class="notification__text">Товар добавлен в корзину</p>
@@ -210,6 +214,9 @@
                 </li>
                 <li class="mobile-menu__item">
                     <a class="mobile-menu__link" href="#">Контакты</a>
+                </li>
+                <li class="mobile-menu__item mobile-menu__item-mobile">
+                    <a class="mobile-menu__link" href="#">Таблицы сравнения</a>
                 </li>
             </ul>
         </nav>

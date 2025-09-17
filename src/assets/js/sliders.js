@@ -182,6 +182,7 @@ export function SlidersInit() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
     const thumbSlider = new Swiper('.card-slider__thumbs', {
         slidesPerView: 2,
         spaceBetween: 12,
@@ -206,6 +207,27 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         thumbs: {
             swiper: thumbSlider
+        }
+    });
+
+    const thumbSliderTablet = new Swiper('.card-slider_tablet__thumbs', {
+        direction: 'vertical',
+        slidesPerView: 3,
+        spaceBetween: 12,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+
+    const mainSliderTablet = new Swiper('.card-slider_tablet__main', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.card-slider_tablet__arrow--next',
+            prevEl: '.card-slider_tablet__arrow--prev',
+        },
+        thumbs: {
+            swiper: thumbSliderTablet
         }
     });
 });
