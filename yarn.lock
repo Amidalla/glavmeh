@@ -5,10 +5,26 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"@babel/runtime-corejs3@npm:^7.24.4":
+  version: 7.28.4
+  resolution: "@babel/runtime-corejs3@npm:7.28.4"
+  dependencies:
+    core-js-pure: "npm:^3.43.0"
+  checksum: 10c0/0a7fe2d4e36d345acf090dd685b5c6ed55af3ead69a84e2cfca56631815dd757f3a362031b376cc746f63f0fd856e7a5280807833f7fa9a5b7f1febd97f8c0da
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.6.1":
   version: 0.6.3
   resolution: "@discoveryjs/json-ext@npm:0.6.3"
   checksum: 10c0/778a9f9d5c3696da3c1f9fa4186613db95a1090abbfb6c2601430645c0d0158cd5e4ba4f32c05904e2dd2747d57710f6aab22bd2f8aa3c4e8feab9b247c65d85
+  languageName: node
+  linkType: hard
+
+"@fancyapps/ui@npm:^6.1.6":
+  version: 6.1.6
+  resolution: "@fancyapps/ui@npm:6.1.6"
+  checksum: 10c0/b84db5121eadc12afec65aa0fedc1f589f7b04391aa3e5338c701dcea6bf9daadc04a3e3a8f44ec62b594735986520ab9f47c4e4eeea450e4fd8ee670014ca0f
   languageName: node
   linkType: hard
 
@@ -1576,6 +1592,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js-pure@npm:^3.43.0":
+  version: 3.47.0
+  resolution: "core-js-pure@npm:3.47.0"
+  checksum: 10c0/7eb5f897e532b33e6ea85ec2c60073fc2fe943e4543ec9903340450fc0f3b46b5b118d57d332e9f2c3d681a8b7b219a4cc64ccf548d933f6b79f754b682696dd
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:~1.0.0":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -2634,10 +2657,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "glavmeh@workspace:."
   dependencies:
+    "@fancyapps/ui": "npm:^6.1.6"
     copy-webpack-plugin: "npm:^13.0.1"
     css-loader: "npm:^7.1.2"
     html-loader: "npm:^5.1.0"
     html-webpack-plugin: "npm:^5.6.4"
+    imask: "npm:^7.6.1"
     mini-css-extract-plugin: "npm:^2.9.4"
     posthtml-expressions: "npm:^1.11.4"
     posthtml-include: "npm:^2.0.1"
@@ -3050,6 +3075,15 @@ __metadata:
   peerDependencies:
     postcss: ^8.1.0
   checksum: 10c0/39c92936fabd23169c8611d2b5cc39e39d10b19b0d223352f20a7579f75b39d5f786114a6b8fc62bee8c5fed59ba9e0d38f7219a4db383e324fb3061664b043d
+  languageName: node
+  linkType: hard
+
+"imask@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "imask@npm:7.6.1"
+  dependencies:
+    "@babel/runtime-corejs3": "npm:^7.24.4"
+  checksum: 10c0/cda75bb5036bf65b1028a39ee5fe7bb1a654838213e8f85288c5899a9e5eb84ce7d2b37ae2d9d600f553b7b0e9fd2f4ba2cbdb03a2c46cf0fa60075bc0c21f0c
   languageName: node
   linkType: hard
 

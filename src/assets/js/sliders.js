@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import { Fancybox } from "@fancyapps/ui";
 
 export function SlidersInit() {
     const mainSlider = new Swiper(".slider-main", {

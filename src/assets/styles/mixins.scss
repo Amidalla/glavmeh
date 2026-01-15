@@ -180,6 +180,17 @@
     border: 1px solid $border-color;
     overflow: hidden;
     position: relative;
+    background: c.$white;
+
+    a:not(.item-series__button) {
+      display: grid;
+      grid-template-rows: 185px 1fr;
+      height: 100%;
+    }
+
+    img {
+      object-fit: scale-down;
+    }
   }
 
   &__description {
@@ -208,7 +219,7 @@
       color: c.$black;
       display: flex;
       min-width: 80px;
-      justify-content: space-between;
+      gap: 10px;
       align-items: end;
 
       span {

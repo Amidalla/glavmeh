@@ -32,7 +32,9 @@
   },
   "packageManager": "yarn@4.9.2",
   "dependencies": {
+    "@fancyapps/ui": "^6.1.6",
     "html-loader": "^5.1.0",
+    "imask": "^7.6.1",
     "posthtml-expressions": "^1.11.4",
     "posthtml-include": "^2.0.1",
     "posthtml-inline-svg": "^0.2.0",

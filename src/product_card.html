@@ -39,10 +39,18 @@
                     <div class="card-slider__main swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider.png" alt="Товар 1" class="card-slider__image lazy">
+                                <a href="assets/images/card_slider.png" data-fancybox="product-gallery"
+                                   data-caption="Описание изображения 1">
+                                    <img data-src="assets/images/card_slider.png" alt="Товар 1"
+                                         class="card-slider__image lazy">
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider.png" alt="Товар 2" class="card-slider__image lazy">
+                                <a href="assets/images/card_slider.png" data-fancybox="product-gallery"
+                                   data-caption="Описание изображения 2">
+                                    <img data-src="assets/images/card_slider.png" alt="Товар 2"
+                                         class="card-slider__image lazy">
+                                </a>
                             </div>
                         </div>
                         <div class="card-slider__navigation">
@@ -53,10 +61,12 @@
                     <div class="card-slider__thumbs swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 1" class="card-slider__thumb lazy">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 1"
+                                     class="card-slider__thumb lazy">
                             </div>
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 2" class="card-slider__thumb lazy">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 2"
+                                     class="card-slider__thumb lazy">
                             </div>
                         </div>
                     </div>
@@ -65,20 +75,24 @@
                     <div class="card-slider_tablet__thumbs swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 1" class="card-slider__thumb lazy">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 1"
+                                     class="card-slider__thumb lazy">
                             </div>
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 2" class="card-slider__thumb lazy">
+                                <img data-src="assets/images/card_slider_min.jpg" alt="Превью 2"
+                                     class="card-slider__thumb lazy">
                             </div>
                         </div>
                     </div>
                     <div class="card-slider_tablet__main swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider.png" alt="Товар 1" class="card-slider__image lazy">
+                                <img data-src="assets/images/card_slider.png" alt="Товар 1"
+                                     class="card-slider__image lazy">
                             </div>
                             <div class="swiper-slide">
-                                <img data-src="assets/images/card_slider.png" alt="Товар 2" class="card-slider__image lazy">
+                                <img data-src="assets/images/card_slider.png" alt="Товар 2"
+                                     class="card-slider__image lazy">
                             </div>
                         </div>
                         <div class="card-slider_tablet__navigation">
@@ -132,10 +146,10 @@
                         </div>
                         <div class="product-card__btn_mobile">Подробнее</div>
                         <div class="modal-delivery_mobile">
-                                <p class="delivery-information">по МСК от 2 дней</p>
-                                <p class="delivery-information">по ЕКБ от 6 дней</p>
-                                <div class="mobile-btn-close">
-                                    <img class="lazy" data-src="assets/images/cross.svg" alt="">
+                            <p class="delivery-information">по МСК от 2 дней</p>
+                            <p class="delivery-information">по ЕКБ от 6 дней</p>
+                            <div class="mobile-btn-close">
+                                <img class="lazy" data-src="assets/images/cross.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -159,10 +173,60 @@
                                 <img class="lazy" data-src="assets/images/plus.svg" alt="">
                             </button>
                         </label>
+                        <div class="hardness-select-wrapper">
+                            <div class="hardness-select__label">Выбрать твердость</div>
+
+                            <div class="hardness-select">
+                                <div class="hardness-select__header">
+                                    <span class="hardness-select__current">
+                                        <span class="hardness-select__value">40+</span>
+                                        <span class="hardness-select__separator">/</span>
+                                        <span class="hardness-select__unit">5 Shore</span>
+                                    </span>
+                                    <svg class="hardness-select__arrow" width="12" height="7" viewBox="0 0 12 7"
+                                         fill="none">
+                                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+
+                                <div class="hardness-select__dropdown">
+                                    <div class="hardness-select__option" data-value="30">
+                                        <span class="hardness-select__option-value">30</span>
+                                        <span class="hardness-select__option-separator">/</span>
+                                        <span class="hardness-select__option-unit">5 Shore</span>
+                                    </div>
+                                    <div class="hardness-select__option" data-value="35">
+                                        <span class="hardness-select__option-value">35</span>
+                                        <span class="hardness-select__option-separator">/</span>
+                                        <span class="hardness-select__option-unit">5 Shore</span>
+                                    </div>
+                                    <div class="hardness-select__option" data-value="40" data-selected>
+                                        <span class="hardness-select__option-value">40+</span>
+                                        <span class="hardness-select__option-separator">/</span>
+                                        <span class="hardness-select__option-unit">5 Shore</span>
+                                    </div>
+                                    <div class="hardness-select__option" data-value="45">
+                                        <span class="hardness-select__option-value">45</span>
+                                        <span class="hardness-select__option-separator">/</span>
+                                        <span class="hardness-select__option-unit">5 Shore</span>
+                                    </div>
+                                    <div class="hardness-select__option" data-value="50">
+                                        <span class="hardness-select__option-value">50</span>
+                                        <span class="hardness-select__option-separator">/</span>
+                                        <span class="hardness-select__option-unit">5 Shore</span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="hardness" value="40" class="hardness-select__input">
+                            </div>
+                        </div>
                         <button class="purchase-info__btn">В корзину</button>
                     </div>
                     <div class="purchase-info__delivery">
-                        <p><b>Доставка по СПб</b> от 1 дня<span>(после поступления заказа)</span></p>
+                        <p>
+                            <b>Доставка по СПб
+                            </b> от 1 дня<span>(после поступления заказа)</span></p>
                         <p><b>по Москве</b> от 2 дней</p>
                         <p><b>по Екатеринбургу</b> от 6 дней</p>
                         <a class="purchase-info__link" href="">Подробнее</a>
@@ -185,18 +249,33 @@
                 <div class="product-tabs__content">
                     <div class="product-tabs__pane product-tabs__pane--active" id="description">
                         <div class="product-tabs__text">
-                            <p>Под брендом Главмех предлагает широкий ассортимент высококачественных комплектующих для различных отраслей производств.
-                                Промышленные комплектующие играют важнейшую роль в производственных процессах. Независимо от сферы деятельности, будь то автомобилестроение, пищевая промышленность или машиностроение, высококачественные комплектующие определяют эффективность и надежность всей системы.</p>
+                            <p>Под брендом Главмех предлагает широкий ассортимент высококачественных комплектующих для
+                                различных отраслей производств.
+                                Промышленные комплектующие играют важнейшую роль в производственных процессах.
+                                Независимо от сферы деятельности, будь то автомобилестроение, пищевая промышленность или
+                                машиностроение, высококачественные комплектующие определяют эффективность и надежность
+                                всей системы.</p>
 
-                            <p>Качество компонент — главный аспект, на который следует обратить внимание при выборе поставщика. Высокое качество комплектующих способствует снижению уровня отказов и повышает общую надежность конечной продукции. Это, в свою очередь, влияет на репутацию компании и ее способность привлекать новых клиентов.
-                                Среди международных стандартов, которые могут гарантировать качество, стоит отметить ISO 9001. Это стандарт менеджмента качества, который обеспечивает системный подход к управлению процессами и готовности к постоянному улучшению. Поставщики, сертифицированные по этому стандарту, часто в состоянии предложить более надежные и качественные решения.</p>
+                            <p>Качество компонент — главный аспект, на который следует обратить внимание при выборе
+                                поставщика. Высокое качество комплектующих способствует снижению уровня отказов и
+                                повышает общую надежность конечной продукции. Это, в свою очередь, влияет на репутацию
+                                компании и ее способность привлекать новых клиентов.
+                                Среди международных стандартов, которые могут гарантировать качество, стоит отметить ISO
+                                9001. Это стандарт менеджмента качества, который обеспечивает системный подход к
+                                управлению процессами и готовности к постоянному улучшению. Поставщики,
+                                сертифицированные по этому стандарту, часто в состоянии предложить более надежные и
+                                качественные решения.</p>
                         </div>
                     </div>
 
                     <div class="product-tabs__pane" id="properties">
                         <div class="product-specs">
-                            <p>Под брендом Главмех предлагает широкий ассортимент высококачественных комплектующих для различных отраслей производств.
-                                Промышленные комплектующие играют важнейшую роль в производственных процессах. Независимо от сферы деятельности, будь то автомобилестроение, пищевая промышленность или машиностроение, высококачественные комплектующие определяют эффективность и надежность всей системы.</p>
+                            <p>Под брендом Главмех предлагает широкий ассортимент высококачественных комплектующих для
+                                различных отраслей производств.
+                                Промышленные комплектующие играют важнейшую роль в производственных процессах.
+                                Независимо от сферы деятельности, будь то автомобилестроение, пищевая промышленность или
+                                машиностроение, высококачественные комплектующие определяют эффективность и надежность
+                                всей системы.</p>
 
                         </div>
                     </div>
@@ -376,7 +455,8 @@
             <div class="main-reviews__inner">
                 <div class="main-reviews__item">
                     <h2>О нас пишут</h2>
-                    <p>Предлагаем вам широкий ассортимент продукции, который в совокупности с нашими услугами поможет повысить эффективность вашего бизнеса, и улучшить ваши показатели...</p>
+                    <p>Предлагаем вам широкий ассортимент продукции, который в совокупности с нашими услугами поможет
+                        повысить эффективность вашего бизнеса, и улучшить ваши показатели...</p>
                     <a href="#" class="main-reviews__link">Все отзывы</a>
                 </div>
                 <div class="main-reviews__item">
@@ -396,7 +476,12 @@
                                         <span></span>
                                     </div>
                                 </div>
-                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить. Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после обеда"</p>
+                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить.
+                                    Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла
+                                    немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и
+                                    описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая
+                                    фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после
+                                    обеда"</p>
                                 <a class="main-reviews__button">Отзыв полностью</a>
                             </div>
                             <div class="swiper-slide">
@@ -413,7 +498,12 @@
                                         <span></span>
                                     </div>
                                 </div>
-                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить. Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после обеда"</p>
+                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить.
+                                    Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла
+                                    немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и
+                                    описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая
+                                    фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после
+                                    обеда"</p>
                                 <a class="main-reviews__button">Отзыв полностью</a>
                             </div>
                             <div class="swiper-slide">
@@ -430,7 +520,12 @@
                                         <span></span>
                                     </div>
                                 </div>
-                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить. Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после обеда"</p>
+                                <p>Приличная и солидная компания. Заказ приняли без проволочек и обещаний перезвонить.
+                                    Менеджер со знанием дела квалифицированно проконсультировал. Выслали быстро. Шла
+                                    немного дольше, но это уже претензии к ТК. Запчасть полностью соответствует и
+                                    описанию и качеству. Ассортимент запчастей на импортные грузовики большой. Хорошая
+                                    фирма. Все четко, ответственно и по делу без реплик "позвоните завтра после
+                                    обеда"</p>
                                 <a class="main-reviews__button">Отзыв полностью</a>
                             </div>
                         </div>
@@ -482,9 +577,6 @@
 <include src="layout/modals.html"></include>
 
 <div class="product-card__info purchase-info purchase-fixed">
-    <div class="purchase-info__price">
-        от <span>90 ₽</span>
-    </div>
     <div class="purchase-info__form">
         <label class="modal__quantity">
             <button class="modal__btn-minus" type="button">
@@ -496,7 +588,59 @@
                 <img class="lazy" data-src="assets/images/plus.svg" alt="">
             </button>
         </label>
-        <button class="purchase-info__btn">В корзину</button>
+        <div class="purchase-info__price">
+            от <span>90 ₽</span>
+        </div>
+        <div class="mobile-container">
+            <div class="hardness-select-wrapper">
+                <div class="hardness-select__label">Выбрать твердость</div>
+
+                <div class="hardness-select">
+                    <div class="hardness-select__header">
+            <span class="hardness-select__current">
+                <span class="hardness-select__value">40+</span>
+                <span class="hardness-select__separator">/</span>
+                <span class="hardness-select__unit">5 Shore</span>
+            </span>
+                        <svg class="hardness-select__arrow" width="12" height="7" viewBox="0 0 12 7" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+
+                    <div class="hardness-select__dropdown">
+                        <div class="hardness-select__option" data-value="30">
+                            <span class="hardness-select__option-value">30</span>
+                            <span class="hardness-select__option-separator">/</span>
+                            <span class="hardness-select__option-unit">5 Shore</span>
+                        </div>
+                        <div class="hardness-select__option" data-value="35">
+                            <span class="hardness-select__option-value">35</span>
+                            <span class="hardness-select__option-separator">/</span>
+                            <span class="hardness-select__option-unit">5 Shore</span>
+                        </div>
+                        <div class="hardness-select__option" data-value="40" data-selected>
+                            <span class="hardness-select__option-value">40+</span>
+                            <span class="hardness-select__option-separator">/</span>
+                            <span class="hardness-select__option-unit">5 Shore</span>
+                        </div>
+                        <div class="hardness-select__option" data-value="45">
+                            <span class="hardness-select__option-value">45</span>
+                            <span class="hardness-select__option-separator">/</span>
+                            <span class="hardness-select__option-unit">5 Shore</span>
+                        </div>
+                        <div class="hardness-select__option" data-value="50">
+                            <span class="hardness-select__option-value">50</span>
+                            <span class="hardness-select__option-separator">/</span>
+                            <span class="hardness-select__option-unit">5 Shore</span>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="hardness" value="40" class="hardness-select__input">
+                </div>
+            </div>
+            <button class="purchase-info__btn">В корзину</button>
+        </div>
     </div>
 </div>
 </body>
